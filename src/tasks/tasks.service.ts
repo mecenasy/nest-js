@@ -9,6 +9,7 @@ import { Repository } from 'typeorm';
 import { CreateTaskLabelDto } from './dto/create-task-label.dto';
 import { TaskLabel } from './entity/task-label.entity';
 import { FindTaskParams } from './params/find-task.params';
+import { PaginationParams } from 'src/common/pagination.params';
 
 @Injectable()
 export class TasksService {
@@ -18,14 +19,47 @@ export class TasksService {
     private readonly labelRepository: Repository<TaskLabel>,
   ) {}
 
-  public async getTasks(filters?: FindTaskParams): Promise<ITask[]> {
-    if (filters) {
-      return await this.tasksRepository.find({
-        where: { status: filters.status },
-        relations: ['labels'],
-      });
+  public async getTasks(
+    filters: FindTaskParams,
+    pagination: PaginationParams,
+  ): Promise<[ITask[], number]> {
+    const query = this.tasksRepository
+      .createQueryBuilder('task')
+      .leftJoinAndSelect('task.labels', 'label');
+
+    if (filters.status) {
+      query.andWhere('task.status = :status', { status: filters.status });
     }
-    return await this.tasksRepository.find();
+
+    if (filters.search?.trim()) {
+      query.andWhere(
+        '(task.title ILIKE :search OR task.description ILIKE :search)',
+        { search: `%${filters.search.trim()}%` },
+      );
+    }
+
+    if (pagination) {
+      query.skip(pagination.offset).take(pagination.limit);
+    }
+
+    return await query.getManyAndCount();
+    // Troszkę gorszy sposub wyszukiwania
+
+    // if (filters || pagination) {
+    //   const query = {
+    //     where: {
+    //       status: filters.status,
+    //       title: Like(`%${filters.search?.trim()}%`),
+    //       description: Like(`%${filters.search?.trim()}%`),
+    //     },
+    //     skip: pagination.offset,
+    //     take: pagination.limit,
+    //     relations: ['labels'],
+    //   };
+    //   return await this.tasksRepository.findAndCount(query);
+    // }
+
+    // return await this.tasksRepository.findAndCount();
   }
 
   public async getTaskById(id: string): Promise<ITask | null> {

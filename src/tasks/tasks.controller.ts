@@ -22,13 +22,29 @@ import { WrongTaskStatusException } from './exception/wrong-task-status-exceptio
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { CreateTaskLabelDto } from './dto/create-task-label.dto';
 import { FindTaskParams } from './params/find-task.params';
+import { PaginationParams } from 'src/common/pagination.params';
+import { PaginationResponse } from 'src/common/pagination.response';
 
 @Controller('tasks')
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
   @Get()
-  public async getTasks(@Query() filters: FindTaskParams): Promise<ITask[]> {
-    return await this.tasksService.getTasks(filters);
+  public async getTasks(
+    @Query() filters: FindTaskParams,
+    @Query() pagination: PaginationParams,
+  ): Promise<PaginationResponse<ITask>> {
+    const [items, count] = await this.tasksService.getTasks(
+      filters,
+      pagination,
+    );
+
+    return {
+      data: items,
+      pagination: {
+        total: count,
+        ...pagination,
+      },
+    };
   }
 
   @Get(':id')
