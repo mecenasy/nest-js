@@ -25,7 +25,7 @@ export class TasksService {
   ): Promise<[ITask[], number]> {
     const query = this.tasksRepository
       .createQueryBuilder('task')
-      .leftJoinAndSelect('task.labels', 'label');
+      .leftJoinAndSelect('task.labels', 'labels');
 
     if (filters.status) {
       query.andWhere('task.status = :status', { status: filters.status });
@@ -33,9 +33,24 @@ export class TasksService {
 
     if (filters.search?.trim()) {
       query.andWhere(
+        // 'task.title LIKE :search OR task.description LIKE :search',
         '(task.title ILIKE :search OR task.description ILIKE :search)',
         { search: `%${filters.search.trim()}%` },
       );
+    }
+
+    if (filters.labels?.length) {
+      const subQuery = query
+        .subQuery()
+        .select('labels.taskId')
+        .from('task_label', 'labels')
+        .where('labels.name IN (:...labels)', { labels: filters.labels })
+        .getQuery();
+
+      query.andWhere(`task.id IN ${subQuery}`);
+
+      //utrata labelek
+      // query.andWhere('labels.name IN (:...labels)', { labels: filters.labels });
     }
 
     if (pagination) {
