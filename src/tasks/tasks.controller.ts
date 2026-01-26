@@ -11,27 +11,24 @@ import {
   Patch,
   Post,
   Put,
+  Query,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import type { ITask } from './model/task.model';
 import { CreateTaskDto } from './dto/create-task.dto';
-import { FindOneParams } from './dto/find-one-params';
+import { FindOneParams } from './params/find-one-params';
 import { UpdateTaskStatusDto } from './dto/update-task-status.dto';
 import { WrongTaskStatusException } from './exception/wrong-task-status-exception';
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { CreateTaskLabelDto } from './dto/create-task-label.dto';
+import { FindTaskParams } from './params/find-task.params';
 
 @Controller('tasks')
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
   @Get()
-  public async getTasks(): Promise<ITask[]> {
-    return await this.tasksService.getTasks();
-  }
-
-  @Get()
-  public async getTasks2(): Promise<ITask[]> {
-    return await this.tasksService.getTasks();
+  public async getTasks(@Query() filters: FindTaskParams): Promise<ITask[]> {
+    return await this.tasksService.getTasks(filters);
   }
 
   @Get(':id')

@@ -8,6 +8,7 @@ import { Task } from './entity/task.entity';
 import { Repository } from 'typeorm';
 import { CreateTaskLabelDto } from './dto/create-task-label.dto';
 import { TaskLabel } from './entity/task-label.entity';
+import { FindTaskParams } from './params/find-task.params';
 
 @Injectable()
 export class TasksService {
@@ -17,7 +18,13 @@ export class TasksService {
     private readonly labelRepository: Repository<TaskLabel>,
   ) {}
 
-  public async getTasks(): Promise<ITask[]> {
+  public async getTasks(filters?: FindTaskParams): Promise<ITask[]> {
+    if (filters) {
+      return await this.tasksRepository.find({
+        where: { status: filters.status },
+        relations: ['labels'],
+      });
+    }
     return await this.tasksRepository.find();
   }
 
