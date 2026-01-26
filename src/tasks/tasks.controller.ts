@@ -23,30 +23,34 @@ import { WrongTaskStatusException } from './exception/wrong-task-status-exceptio
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
   @Get()
-  public getTasks(): ITask[] {
-    return this.tasksService.getTasks();
+  public async getTasks(): Promise<ITask[]> {
+    return await this.tasksService.getTasks();
+  }
+
+  @Get()
+  public async getTasks2(): Promise<ITask[]> {
+    return await this.tasksService.getTasks();
   }
 
   @Get(':id')
-  public getTaskById(@Param() params: FindOneParams): ITask {
-    return this.findTaskByIdOrFail(params.id);
+  public async getTaskById(@Param() params: FindOneParams): Promise<ITask> {
+    return await this.findTaskByIdOrFail(params.id);
   }
 
   @Post()
-  public createTask(@Body() task: CreateTaskDto): ITask {
-    const newTask = this.tasksService.createTask(task);
-    return newTask;
+  public async createTask(@Body() task: CreateTaskDto): Promise<ITask> {
+    return await this.tasksService.createTask(task);
   }
 
   @Patch(':id/status')
-  public updateTaskStatus(
+  public async updateTaskStatus(
     @Param() params: FindOneParams,
     @Body() updateTaskDto: UpdateTaskStatusDto,
-  ): ITask {
-    const task = this.findTaskByIdOrFail(params.id);
+  ): Promise<ITask> {
+    const task = await this.findTaskByIdOrFail(params.id);
 
     try {
-      return this.tasksService.updateTask(task, updateTaskDto);
+      return await this.tasksService.updateTask(task, updateTaskDto);
     } catch (error) {
       if (error instanceof WrongTaskStatusException) {
         throw new BadRequestException(error.message);
@@ -57,23 +61,23 @@ export class TasksController {
   }
 
   @Put(':id')
-  public updateTask(
+  public async updateTask(
     @Param() params: FindOneParams,
     @Body() updateTaskDto: UpdateTaskStatusDto,
-  ): ITask {
-    const task = this.findTaskByIdOrFail(params.id);
-    return this.tasksService.updateTask(task, updateTaskDto);
+  ): Promise<ITask> {
+    const task = await this.findTaskByIdOrFail(params.id);
+    return await this.tasksService.updateTask(task, updateTaskDto);
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  public deleteTask(@Param() params: FindOneParams) {
-    const task = this.findTaskByIdOrFail(params.id);
-    return this.tasksService.deleteTask(task);
+  public async deleteTask(@Param() params: FindOneParams) {
+    const task = await this.findTaskByIdOrFail(params.id);
+    await this.tasksService.deleteTask(task);
   }
 
-  private findTaskByIdOrFail(id: string): ITask {
-    const task = this.tasksService.getTaskById(id);
+  private async findTaskByIdOrFail(id: string): Promise<ITask> {
+    const task = await this.tasksService.getTaskById(id);
 
     if (!task) {
       throw new NotFoundException(`Task with ID "${id}" not found`);

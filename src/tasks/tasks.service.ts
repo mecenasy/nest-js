@@ -1,34 +1,34 @@
 import { Injectable } from '@nestjs/common';
 import { ITask, TaskStatus } from './model/task.model';
 import { CreateTaskDto } from './dto/create-task.dto';
-import { randomUUID } from 'crypto';
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { WrongTaskStatusException } from './exception/wrong-task-status-exception';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Task } from './entity/task.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class TasksService {
-  private tasks: ITask[] = [];
+  constructor(
+    @InjectRepository(Task) private readonly taskRepository: Repository<Task>,
+  ) {}
 
-  public getTasks(): ITask[] {
-    return this.tasks;
+  public async getTasks(): Promise<ITask[]> {
+    return await this.taskRepository.find();
   }
 
-  public getTaskById(id: string): ITask | undefined {
-    return this.tasks.find((t) => t.id === id);
+  public async getTaskById(id: string): Promise<ITask | null> {
+    return await this.taskRepository.findOne({ where: { id } });
   }
 
-  public createTask(task: CreateTaskDto): ITask {
-    const newTask: ITask = {
-      id: randomUUID(),
-      ...task,
-    };
-
-    this.tasks.push(newTask);
-
-    return newTask;
+  public async createTask(task: CreateTaskDto): Promise<ITask> {
+    return await this.taskRepository.save(task);
   }
 
-  public updateTask(task: ITask, updateTaskDto: UpdateTaskDto): ITask {
+  public async updateTask(
+    task: ITask,
+    updateTaskDto: UpdateTaskDto,
+  ): Promise<ITask> {
     const isStatusTransition = this.isVallationStatusTransition(
       task.status,
       updateTaskDto.status,
@@ -38,15 +38,11 @@ export class TasksService {
       throw new WrongTaskStatusException();
     }
 
-    const index = this.tasks.findIndex((t) => t.id === task.id);
-    if (index !== -1) {
-      this.tasks[index] = { ...task, ...updateTaskDto };
-    }
-    return this.tasks[index];
+    return await this.taskRepository.save({ ...task, ...updateTaskDto });
   }
 
-  public deleteTask(task: ITask): void {
-    this.tasks = this.tasks.filter((t) => t.id !== task.id);
+  public async deleteTask(task: ITask): Promise<void> {
+    await this.taskRepository.delete(task);
   }
   private isVallationStatusTransition(
     fromStatus: TaskStatus,
