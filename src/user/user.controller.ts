@@ -1,11 +1,24 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  ClassSerializerInterceptor,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+  SerializeOptions,
+  UseInterceptors,
+} from '@nestjs/common';
 import { AuthService } from './auth/auth.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LoginDto } from './dto/login.dto';
 import { IUser } from './model/user.model';
 import { LoginResponse } from './login.response';
+import { Expose } from 'class-transformer';
 
 @Controller('user')
+@UseInterceptors(ClassSerializerInterceptor)
+@SerializeOptions({ strategy: 'excludeAll' })
 export class UserController {
   constructor(private readonly authService: AuthService) {}
 
@@ -17,10 +30,13 @@ export class UserController {
   }
 
   @Post('login')
+  @HttpCode(HttpStatus.OK)
+  @Expose()
   public async loginUser(@Body() loginUser: LoginDto): Promise<LoginResponse> {
     const { email, password } = loginUser;
     const token = await this.authService.login(email, password);
-    return { token };
+
+    return new LoginResponse({ token });
   }
 
   @Get('logout')

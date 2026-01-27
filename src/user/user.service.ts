@@ -17,6 +17,7 @@ export class UserService {
     const hashedPassword = this.passwordService.generatePassword(
       userDto.password,
     );
+
     const user = this.userRepository.create({
       email: userDto.email,
       name: userDto.name,
