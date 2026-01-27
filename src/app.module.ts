@@ -8,6 +8,8 @@ import { configSchema } from './configs/config.types';
 import { typeOrmConfig } from './configs/db.config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeConfigService } from './configs/types.config.service';
+import { authConfig } from './configs/auth.config';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -24,13 +26,14 @@ import { TypeConfigService } from './configs/types.config.service';
 
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [appConfig, typeOrmConfig],
+      load: [appConfig, typeOrmConfig, authConfig],
       validationSchema: configSchema,
       validationOptions: {
         abortEarly: true,
       },
     }),
     TasksModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [

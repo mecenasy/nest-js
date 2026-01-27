@@ -62,7 +62,8 @@ export class TasksService {
     }
 
     return await query.getManyAndCount();
-    // Troszkę gorszy sposub wyszukiwania
+
+    // this is worst solution
 
     // if (filters || pagination) {
     //   const query = {
