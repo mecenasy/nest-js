@@ -9,14 +9,14 @@ import {
   SerializeOptions,
   UseInterceptors,
 } from '@nestjs/common';
-import { AuthService } from './auth/auth.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { LoginDto } from './dto/login.dto';
-import { IUser } from './model/user.model';
-import { LoginResponse } from './login.response';
+import { AuthService } from './auth.service';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { LoginDto } from '../dto/login.dto';
+import { IUser } from '../model/user.model';
+import { LoginResponse } from '../login.response';
 import { Expose } from 'class-transformer';
 
-@Controller('user')
+@Controller('auth')
 @UseInterceptors(ClassSerializerInterceptor)
 @SerializeOptions({ strategy: 'excludeAll' })
 export class UserController {
