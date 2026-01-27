@@ -8,10 +8,11 @@ import { User } from 'src/user/entity/user.entity';
 import { UserService } from './user.service';
 import { AuthService } from './auth/auth.service';
 import { PasswordService } from './password/password.service';
-import { UserController } from './auth/user.controller';
+import { AuthController } from './auth/auth.controller';
 import { TokenService } from './auth/token.service';
 import { HashedPassword } from './entity/hashed-password.entity';
 import { AuthGuard } from './auth/user.guard';
+import { UserController } from './user.controller';
 
 @Module({
   imports: [
@@ -34,6 +35,6 @@ import { AuthGuard } from './auth/user.guard';
     TokenService,
     AuthGuard,
   ],
-  controllers: [UserController],
+  controllers: [UserController, AuthController],
 })
 export class UserModule {}

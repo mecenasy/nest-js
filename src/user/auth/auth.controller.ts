@@ -13,13 +13,13 @@ import { AuthService } from './auth.service';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { LoginDto } from '../dto/login.dto';
 import { IUser } from '../model/user.model';
-import { LoginResponse } from '../login.response';
+import { LoginResponse } from '../response/login.response';
 import { Expose } from 'class-transformer';
 
 @Controller('auth')
 @UseInterceptors(ClassSerializerInterceptor)
 @SerializeOptions({ strategy: 'excludeAll' })
-export class UserController {
+export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')

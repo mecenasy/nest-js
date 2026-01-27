@@ -33,7 +33,6 @@ export class TokenService {
     const payload = await this.jwtService.verifyAsync<ITokenPayload>(token, {
       secret: this.configService.get<AuthConfig>('auth')?.jwt.secretKey,
     });
-    console.log("🚀 ~ TokenService ~ verifyToken ~ payload:", payload)
 
     return payload;
   }
