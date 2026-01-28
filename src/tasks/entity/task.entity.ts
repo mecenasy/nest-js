@@ -45,7 +45,11 @@ export class Task implements ITask {
   @UpdateDateColumn()
   updateTime: Date;
 
-  @ManyToOne(() => User, (user) => user.tasks, { nullable: false })
+  @ManyToOne(() => User, (user) => user.tasks, {
+    onDelete: 'CASCADE',
+    orphanedRowAction: 'delete',
+    nullable: false,
+  })
   user: User;
 
   @OneToMany(() => TaskLabel, (label) => label.task, {

@@ -4,8 +4,8 @@ import { User } from './user.entity';
 
 @Entity()
 export class HashedPassword implements IHashedPassword {
-  @PrimaryColumn()
-  userId: number;
+  @PrimaryColumn({ type: 'uuid' })
+  userId: string;
 
   @Column()
   hash: string;

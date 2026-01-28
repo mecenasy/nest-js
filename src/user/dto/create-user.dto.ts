@@ -1,11 +1,20 @@
-import { IsEmail, IsNotEmpty, Matches, MinLength } from 'class-validator';
+import {
+  IsEmail,
+  IsNotEmpty,
+  IsString,
+  Matches,
+  MinLength,
+} from 'class-validator';
+import { CreatePersonDto } from '../../person/dto/person.dto';
+import { CreateAddressDto } from '../../person/dto/address.dto';
 
 export class CreateUserDto {
   @IsEmail()
   email: string;
 
+  @IsString()
   @IsNotEmpty()
-  name: string;
+  role: string;
 
   @IsNotEmpty()
   @MinLength(8)
@@ -19,4 +28,10 @@ export class CreateUserDto {
     message: 'Password must contain at least 1 special character',
   })
   password: string;
+
+  @IsNotEmpty()
+  person: CreatePersonDto;
+
+  @IsNotEmpty()
+  address: CreateAddressDto;
 }

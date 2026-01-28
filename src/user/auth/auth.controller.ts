@@ -10,27 +10,16 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { CreateUserDto } from '../dto/create-user.dto';
 import { LoginDto } from '../dto/login.dto';
-import { IUser } from '../model/user.model';
 import { LoginResponse } from '../response/login.response';
 import { Expose } from 'class-transformer';
-import { Public } from 'src/decorators/public.decorator';
+import { Public } from '../../decorators/public.decorator';
 
 @Controller('auth')
 @UseInterceptors(ClassSerializerInterceptor)
 @SerializeOptions({ strategy: 'excludeAll' })
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
-
-  @Public()
-  @Post('register')
-  @HttpCode(HttpStatus.CREATED)
-  public async registerUser(
-    @Body() registerUser: CreateUserDto,
-  ): Promise<IUser> {
-    return await this.authService.register(registerUser);
-  }
 
   @Public()
   @Post('login')
@@ -44,6 +33,7 @@ export class AuthController {
   }
 
   @Get('logout')
+  @Public()
   public logout() {
     return { message: 'Logout successful' };
   }

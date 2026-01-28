@@ -9,7 +9,7 @@ import { Repository } from 'typeorm';
 import { CreateTaskLabelDto } from './dto/create-task-label.dto';
 import { TaskLabel } from './entity/task-label.entity';
 import { FindTaskParams } from './params/find-task.params';
-import { PaginationParams } from 'src/common/pagination.params';
+import { PaginationParams } from '../common/pagination.params';
 
 @Injectable()
 export class TasksService {

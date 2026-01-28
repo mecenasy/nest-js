@@ -22,8 +22,8 @@ import { WrongTaskStatusException } from './exception/wrong-task-status-exceptio
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { CreateTaskLabelDto } from './dto/create-task-label.dto';
 import { FindTaskParams } from './params/find-task.params';
-import { PaginationParams } from 'src/common/pagination.params';
-import { PaginationResponse } from 'src/common/pagination.response';
+import { PaginationParams } from '../common/pagination.params';
+import { PaginationResponse } from '../common/pagination.response';
 
 @Controller('tasks')
 export class TasksController {

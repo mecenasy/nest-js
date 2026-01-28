@@ -1,35 +1,42 @@
-import { Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  ConflictException,
+  Injectable,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entity/user.entity';
 import { Repository } from 'typeorm';
-import { PasswordService } from 'src/user/password/password.service';
+import { PasswordService } from '../user/password/password.service';
 import { CreateUserDto } from './dto/create-user.dto';
+import { Role } from './entity/role.entity';
+import { IUser } from './model/user.model';
+import { PersonService } from 'src/person/person.service';
 
 @Injectable()
 export class UserService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
+    @InjectRepository(Role)
+    private readonly roleRepository: Repository<Role>,
     private readonly passwordService: PasswordService,
+    private readonly personService: PersonService,
   ) {}
 
-  public async createUser(userDto: CreateUserDto): Promise<User> {
-    const hashedPassword = this.passwordService.generatePassword(
-      userDto.password,
-    );
+  public async register(registerUser: CreateUserDto): Promise<IUser | null> {
+    const existingUser = await this.findUserByEmail(registerUser.email);
 
-    const user = this.userRepository.create({
-      email: userDto.email,
-      name: userDto.name,
-      password: hashedPassword,
-    });
-
-    return await this.userRepository.save(user);
+    if (existingUser) {
+      throw new ConflictException('User with this email already exists');
+    }
+    return await this.createUser(registerUser);
   }
+
   public async findUserByEmail(email: string): Promise<User | null> {
     return this.userRepository
       .createQueryBuilder('user')
       .leftJoinAndSelect('user.password', 'password')
+      .leftJoinAndSelect('user.roles', 'roles')
       .where('user.email = :email', { email })
       .getOne();
 
@@ -42,10 +49,45 @@ export class UserService {
   }
 
   public async findUserById(id: string): Promise<User | null> {
-    return await this.userRepository.findOneBy({ id });
+    return this.userRepository
+      .createQueryBuilder('user')
+      .leftJoinAndSelect('user.roles', 'roles')
+      .where('user.id = :id', { id })
+      .getOne();
+
+    // return await this.userRepository.findOne({
+    //   where: { id },
+    //   relations: { roles: true },
+    // });
   }
 
   public async removeUser(user: User): Promise<void> {
     await this.userRepository.delete(user.id);
+  }
+
+  private async createUser(userDto: CreateUserDto): Promise<User | null> {
+    const role = await this.roleRepository
+      .createQueryBuilder('role')
+      .where('role.name = :name', { name: userDto.role })
+      .getMany();
+
+    if (!role?.length) {
+      throw new BadRequestException('Role not found');
+    }
+
+    const hashedPassword = this.passwordService.generatePassword(
+      userDto.password,
+    );
+    const person = this.personService.create(userDto.person, userDto.address);
+
+    const user = this.userRepository.create({
+      email: userDto.email,
+      password: hashedPassword,
+      roles: role,
+    });
+    user.person = person;
+    person.user = user;
+
+    return await this.userRepository.save(user);
   }
 }

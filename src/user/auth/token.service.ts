@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { IUser } from '../model/user.model';
 import { ConfigService } from '@nestjs/config';
-import { AuthConfig } from 'src/configs/auth.config';
+import { AuthConfig } from '../../configs/auth.config';
 // import fs from 'fs/promises';
 // import path from 'path';
 
@@ -33,7 +33,6 @@ export class TokenService {
     const payload = await this.jwtService.verifyAsync<ITokenPayload>(token, {
       secret: this.configService.get<AuthConfig>('auth')?.jwt.secretKey,
     });
-
     return payload;
   }
 }

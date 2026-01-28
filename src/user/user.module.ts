@@ -2,22 +2,25 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthConfig } from 'src/configs/auth.config';
-import { TypeConfigService } from 'src/configs/types.config.service';
-import { User } from 'src/user/entity/user.entity';
+import { AuthConfig } from '../configs/auth.config';
+import { TypeConfigService } from '../configs/types.config.service';
+import { User } from '../user/entity/user.entity';
 import { UserService } from './user.service';
+import { Role } from '../user/entity/role.entity';
 import { AuthService } from './auth/auth.service';
 import { PasswordService } from './password/password.service';
 import { AuthController } from './auth/auth.controller';
 import { TokenService } from './auth/token.service';
 import { HashedPassword } from './entity/hashed-password.entity';
-import { AuthGuard } from './auth/user.guard';
 import { UserController } from './user.controller';
 import { APP_GUARD } from '@nestjs/core';
+import { AuthGuard } from '../guard/user.guard';
+import { RoleGuard } from '../guard/roles.guard';
+import { PersonModule } from 'src/person/person.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([User, HashedPassword]),
+    TypeOrmModule.forFeature([User, HashedPassword, Role]),
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -28,6 +31,7 @@ import { APP_GUARD } from '@nestjs/core';
         },
       }),
     }),
+    PersonModule,
   ],
   providers: [
     UserService,
@@ -35,9 +39,14 @@ import { APP_GUARD } from '@nestjs/core';
     AuthService,
     TokenService,
     AuthGuard,
+    RoleGuard,
     {
       provide: APP_GUARD,
       useClass: AuthGuard,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: RoleGuard,
     },
   ],
   controllers: [UserController, AuthController],

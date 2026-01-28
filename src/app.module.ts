@@ -10,6 +10,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeConfigService } from './configs/types.config.service';
 import { authConfig } from './configs/auth.config';
 import { UserModule } from './user/user.module';
+import { UniversityModule } from './university/university.module';
+// import { PersonModule } from './person/person.module';
+// import { MenuModule } from './menu/menu.module';
 
 @Module({
   imports: [
@@ -34,6 +37,7 @@ import { UserModule } from './user/user.module';
     }),
     TasksModule,
     UserModule,
+    UniversityModule,
   ],
   controllers: [AppController],
   providers: [

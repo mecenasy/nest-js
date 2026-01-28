@@ -3,17 +3,20 @@ import {
   ClassSerializerInterceptor,
   Controller,
   Get,
+  HttpCode,
+  HttpStatus,
+  Post,
   Request,
   SerializeOptions,
-  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 
 import { UserService } from './user.service';
 import { type Request as ExpressRequest } from 'express';
-import { AuthGuard } from './auth/user.guard';
-import { LoginResponse } from './response/login.response';
 import { ProfileResponse } from './response/profile.response';
+import { Roles } from '../decorators/role.decorator';
+import { IUser } from './model/user.model';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -21,9 +24,21 @@ import { ProfileResponse } from './response/profile.response';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
+  @Post('register')
+  @HttpCode(HttpStatus.CREATED)
+  public async registerUser(
+    @Body() registerUser: CreateUserDto,
+  ): Promise<IUser | null> {
+    return await this.userService.register(registerUser);
+  }
   @Get('profile')
-  @UseGuards(AuthGuard)
   public getProfile(@Request() req: ExpressRequest) {
+    return new ProfileResponse(req.user);
+  }
+
+  @Get('admin')
+  @Roles('STUDENT')
+  public getProfile1(@Request() req: ExpressRequest) {
     return new ProfileResponse(req.user);
   }
 }

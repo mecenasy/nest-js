@@ -6,8 +6,9 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Request } from 'express';
-import { TokenService } from './token.service';
-import { UserService } from '../user.service';
+import { IS_PUBLIC_KEY } from '../decorators/public.decorator';
+import { TokenService } from '../user/auth/token.service';
+import { UserService } from '../user/user.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -18,10 +19,11 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    const isPublic = this.reflector.getAllAndOverride<boolean>('isPublic', [
+    const isPublic = this.reflector.getAllAndOverride<boolean>(IS_PUBLIC_KEY, [
       context.getHandler(),
       context.getClass(),
     ]);
+
     if (isPublic) {
       return true;
     }
@@ -38,6 +40,7 @@ export class AuthGuard implements CanActivate {
       if (!user) {
         throw new UnauthorizedException();
       }
+
       request.user = user;
     } catch {
       throw new UnauthorizedException();
