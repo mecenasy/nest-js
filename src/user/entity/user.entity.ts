@@ -15,6 +15,7 @@ import { HashedPassword } from './hashed-password.entity';
 import { Expose } from 'class-transformer';
 import { Person } from '../../person/entity/person.entity';
 import { Role } from './role.entity';
+import { Student } from 'src/student/entity/student.entity';
 
 @Entity()
 export class User implements IUser {
@@ -51,6 +52,9 @@ export class User implements IUser {
   @ManyToMany(() => Role, (role) => role.user)
   @JoinTable()
   roles: Role[];
+
+  @OneToOne(() => Student, (user) => user.student)
+  student: Student;
 
   @OneToMany(() => Task, (task) => task.user, {
     cascade: true,

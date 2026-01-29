@@ -1,6 +1,7 @@
 import { IsEnum, IsIn, IsOptional, IsString, MinLength } from 'class-validator';
 import { TaskStatus } from '../model/task.model';
 import { Transform } from 'class-transformer';
+import { splitElementByComa } from 'src/decorators/helper/split-element-by-coma';
 
 export class FindTaskParams {
   @IsOptional()
@@ -14,16 +15,7 @@ export class FindTaskParams {
 
   @IsOptional()
   @IsString()
-  @Transform(({ value }: { value?: string }) => {
-    if (!value) {
-      return undefined;
-    }
-
-    return value
-      .split(',')
-      .map((label) => label.trim())
-      .filter((label) => label.length);
-  })
+  @Transform(splitElementByComa)
   labels?: string[];
 
   @IsOptional()

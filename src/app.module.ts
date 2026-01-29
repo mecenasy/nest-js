@@ -12,6 +12,7 @@ import { authConfig } from './configs/auth.config';
 import { UserModule } from './user/user.module';
 import { UniversityModule } from './university/university.module';
 import { MenuModule } from './menu/menu.module';
+import { StudentModule } from './student/student.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { MenuModule } from './menu/menu.module';
     UserModule,
     MenuModule,
     UniversityModule,
+    StudentModule,
   ],
   controllers: [AppController],
   providers: [
