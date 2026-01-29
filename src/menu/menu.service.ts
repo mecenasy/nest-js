@@ -23,11 +23,9 @@ export class MenuService {
   }
 
   public async addMenuItem(menuDto: AddMenuItemDto): Promise<Menu> {
-    console.log('🚀 ~ MenuService ~ addMenuItem ~ menuDto:', menuDto);
     const roles = await this.roleRepository.findBy({
       name: In(menuDto.role),
     });
-    console.log('🚀 ~ MenuService ~ addMenuItem ~ roles:', roles);
     return this.menuRepository.save({ ...menuDto, role: roles });
   }
 }

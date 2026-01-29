@@ -1,7 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 import menus from './data/1769609576629-menu-items';
 export class MenuItems1769609576629 implements MigrationInterface {
-
   public async up(queryRunner: QueryRunner): Promise<void> {
     await Promise.all(
       menus.map(async (menu) => {
@@ -32,8 +31,5 @@ export class MenuItems1769609576629 implements MigrationInterface {
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {
-  }
-
-
+  public async down(queryRunner: QueryRunner): Promise<void> {}
 }
