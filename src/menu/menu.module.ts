@@ -4,10 +4,18 @@ import { MenuController } from './menu.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Menu } from './entity/menu.entity';
 import { Role } from 'src/user/entity/role.entity';
+import { TypeConfigService } from 'src/configs/types.config.service';
+import { ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Menu, Role])],
-  providers: [MenuService],
+  providers: [
+    MenuService,
+    {
+      provide: TypeConfigService,
+      useExisting: ConfigService,
+    },
+  ],
   controllers: [MenuController],
 })
 export class MenuModule {}

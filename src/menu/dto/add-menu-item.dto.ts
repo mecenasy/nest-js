@@ -1,5 +1,5 @@
 import {
-  IsArray,
+  // IsArray,
   IsBoolean,
   IsEnum,
   IsNotEmpty,
@@ -14,9 +14,9 @@ export class AddMenuItemDto implements Omit<IMenu, 'role'> {
   @IsBoolean()
   hidden?: boolean | undefined;
 
+  @IsOptional()
   @IsString()
-  @IsNotEmpty()
-  image: string;
+  image?: string | undefined;
 
   @IsString()
   @IsNotEmpty()
@@ -38,8 +38,8 @@ export class AddMenuItemDto implements Omit<IMenu, 'role'> {
   @IsNotEmpty()
   shortName: string;
 
-  @IsArray()
-  @IsString({ each: true })
+  // @IsArray()
+  // @IsString({ each: true })
   @IsNotEmpty()
   role: string[];
 }

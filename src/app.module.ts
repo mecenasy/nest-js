@@ -13,6 +13,9 @@ import { UserModule } from './user/user.module';
 import { UniversityModule } from './university/university.module';
 import { MenuModule } from './menu/menu.module';
 import { StudentModule } from './student/student.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
+import { FileModule } from './file/file.module';
 
 @Module({
   imports: [
@@ -27,6 +30,10 @@ import { StudentModule } from './student/student.module';
       }),
     }),
 
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'assets'),
+      serveRoot: '/static',
+    }),
     ConfigModule.forRoot({
       isGlobal: true,
       load: [appConfig, typeOrmConfig, authConfig],
@@ -40,6 +47,7 @@ import { StudentModule } from './student/student.module';
     MenuModule,
     UniversityModule,
     StudentModule,
+    FileModule,
   ],
   controllers: [AppController],
   providers: [

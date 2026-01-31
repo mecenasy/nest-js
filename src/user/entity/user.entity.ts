@@ -53,7 +53,10 @@ export class User implements IUser {
   @JoinTable()
   roles: Role[];
 
-  @OneToOne(() => Student, (user) => user.student)
+  @OneToOne(() => Student, (user) => user.student, {
+    cascade: true,
+    nullable: true,
+  })
   student: Student;
 
   @OneToMany(() => Task, (task) => task.user, {

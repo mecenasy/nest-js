@@ -16,6 +16,9 @@ export class UniversityMapResponse {
 
   @Exclude()
   years: YearRes[];
+
+  @Exclude()
+  roles: string[];
 }
 
 export class DirectionRes {

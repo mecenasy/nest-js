@@ -6,6 +6,7 @@ import {
   JoinColumn,
   OneToOne,
   PrimaryGeneratedColumn,
+  RelationId,
 } from 'typeorm';
 import { User } from 'src/user/entity/user.entity';
 
@@ -15,9 +16,7 @@ export class Student implements IStudent {
   @PrimaryGeneratedColumn('increment')
   album: string;
 
-  @IsString()
-  @IsNotEmpty()
-  @Column({ insert: false, update: false })
+  @RelationId((student: Student) => student.student)
   studentId: string;
 
   @IsString()
@@ -45,7 +44,10 @@ export class Student implements IStudent {
   active: boolean;
 
   @IsNotEmpty()
-  @OneToOne(() => User, (user) => user.student, { eager: true })
+  @OneToOne(() => User, (user) => user.student, {
+    eager: true,
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'studentId' })
   student: User;
 }

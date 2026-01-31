@@ -12,6 +12,5 @@ export interface IMenu {
   position: number;
   hidden?: boolean;
   link: string;
-  image: string;
   role: IRole[];
 }

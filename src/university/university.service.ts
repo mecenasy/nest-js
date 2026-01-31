@@ -20,6 +20,7 @@ import {
   UniversityMapResponse,
   YearRes,
 } from './response/university-map.response';
+import { Role } from 'src/user/entity/role.entity';
 
 @Injectable()
 export class UniversityService {
@@ -113,7 +114,7 @@ export class UniversityService {
   }
 
   public async getUniversityMap(): Promise<UniversityMapResponse> {
-    const [directions, specialties, group, years] = await Promise.all([
+    const [directions, specialties, group, years, roles] = await Promise.all([
       this.dataSource
         .getRepository(Direction)
         .createQueryBuilder('direction')
@@ -161,6 +162,7 @@ export class UniversityService {
         .addSelect('json_agg(distinct group.name)', 'groups')
         .groupBy('year.name')
         .getRawMany<YearRes>(),
+      this.getRoles(),
     ]);
 
     return {
@@ -168,7 +170,18 @@ export class UniversityService {
       specialties,
       group,
       years,
+      roles,
     };
+  }
+
+  public async getRoles(): Promise<string[]> {
+    const roles = await this.dataSource
+      .getRepository(Role)
+      .createQueryBuilder('role')
+      .select('json_agg(distinct role.name)', 'names')
+      .getRawMany<{ names: string[] }>();
+
+    return roles.map((role) => role.names).flat();
   }
 
   private async directionTree(

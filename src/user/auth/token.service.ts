@@ -3,6 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { IUser } from '../model/user.model';
 import { ConfigService } from '@nestjs/config';
 import { AuthConfig } from '../../configs/auth.config';
+import ms from 'ms';
 // import fs from 'fs/promises';
 // import path from 'path';
 
@@ -18,7 +19,10 @@ export class TokenService {
     private readonly configService: ConfigService,
   ) {}
 
-  public async generateToken(user: IUser): Promise<string> {
+  public async generateToken(
+    user: IUser,
+    expireAt?: ms.StringValue,
+  ): Promise<string> {
     const payload: ITokenPayload = {
       sub: user.id,
       email: user.email,
@@ -26,7 +30,9 @@ export class TokenService {
     // const privKey = await fs.readFile(path.join(__dirname, 'rsa_priv.pem'));
 
     // return this.jwtService.signAsync(payload, { secret: privKey });
-    return this.jwtService.signAsync(payload);
+    return this.jwtService.signAsync(payload, {
+      expiresIn: expireAt,
+    });
   }
 
   public async verifyToken(token: string): Promise<ITokenPayload> {

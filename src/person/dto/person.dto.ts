@@ -1,5 +1,6 @@
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { IPerson } from '../model/person.model';
+import { Type } from 'class-transformer';
 
 export class CreatePersonDto implements IPerson {
   @IsString()
@@ -12,9 +13,6 @@ export class CreatePersonDto implements IPerson {
 
   @IsNumber()
   @IsNotEmpty()
+  @Type(() => Number)
   phone: number;
-
-  @IsString()
-  @IsOptional()
-  photo?: string;
 }

@@ -1,12 +1,16 @@
 import {
   IsEmail,
   IsNotEmpty,
+  IsOptional,
   IsString,
   Matches,
   MinLength,
+  ValidateNested,
 } from 'class-validator';
 import { CreatePersonDto } from '../../person/dto/person.dto';
 import { CreateAddressDto } from '../../person/dto/address.dto';
+import { Type } from 'class-transformer';
+import { CreateStudentDto } from 'src/student/dto/create-student.dto';
 
 export class CreateUserDto {
   @IsEmail()
@@ -16,7 +20,11 @@ export class CreateUserDto {
   @IsNotEmpty()
   role: string;
 
-  @IsNotEmpty()
+  @IsString()
+  @IsOptional()
+  image?: string;
+
+  @IsOptional()
   @MinLength(8)
   @Matches(/[A-Z]/, {
     message: 'Password must contain at least 1 uppercase letter',
@@ -27,11 +35,20 @@ export class CreateUserDto {
   @Matches(/[^A-Za-z0-9]/, {
     message: 'Password must contain at least 1 special character',
   })
-  password: string;
+  password: string = 'Pass123#';
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => CreateStudentDto)
+  student?: CreateStudentDto;
 
   @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => CreatePersonDto)
   person: CreatePersonDto;
 
   @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => CreateAddressDto)
   address: CreateAddressDto;
 }

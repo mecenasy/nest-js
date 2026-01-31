@@ -14,6 +14,10 @@ export class UniversityController {
   public async getUniversityMap(): Promise<UniversityMapResponse> {
     return await this.universityService.getUniversityMap();
   }
+  @Get('roles')
+  public async geRoles(): Promise<string[]> {
+    return await this.universityService.getRoles();
+  }
 
   @Post('direction')
   public async createDirection(@Body() dto: CreateDirectionDto) {

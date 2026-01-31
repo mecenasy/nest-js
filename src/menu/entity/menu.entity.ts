@@ -48,6 +48,7 @@ export class Menu implements IMenu {
   @Column({
     type: 'boolean',
     nullable: false,
+    default: false,
   })
   @Expose()
   hidden?: boolean;

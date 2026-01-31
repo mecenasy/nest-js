@@ -23,7 +23,7 @@ export class UserService {
     private readonly personService: PersonService,
   ) {}
 
-  public async register(registerUser: CreateUserDto): Promise<IUser | null> {
+  public async register(registerUser: CreateUserDto): Promise<User> {
     const existingUser = await this.findUserByEmail(registerUser.email);
 
     if (existingUser) {
@@ -36,6 +36,7 @@ export class UserService {
     return this.userRepository
       .createQueryBuilder('user')
       .leftJoinAndSelect('user.password', 'password')
+      .leftJoinAndSelect('user.person', 'person')
       .leftJoinAndSelect('user.roles', 'roles')
       .where('user.email = :email', { email })
       .getOne();
@@ -52,6 +53,9 @@ export class UserService {
     return this.userRepository
       .createQueryBuilder('user')
       .leftJoinAndSelect('user.roles', 'roles')
+      .leftJoinAndSelect('user.person', 'person')
+      .leftJoinAndSelect('user.student', 'student')
+      .leftJoinAndSelect('person.address', 'address')
       .where('user.id = :id', { id })
       .getOne();
 
@@ -65,7 +69,7 @@ export class UserService {
     await this.userRepository.delete(user.id);
   }
 
-  private async createUser(userDto: CreateUserDto): Promise<User | null> {
+  private async createUser(userDto: CreateUserDto): Promise<User> {
     const role = await this.roleRepository
       .createQueryBuilder('role')
       .where('role.name = :name', { name: userDto.role })

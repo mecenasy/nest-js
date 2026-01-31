@@ -22,19 +22,25 @@ export class StudentService {
   ) {}
 
   public async createStudent(dto: CreateStudentDto): Promise<Student> {
-    const student = this.studentRepository.create(dto);
     const user = await this.userRepository.findOneBy({ id: dto.studentId });
 
     if (!user) {
       throw new BadRequestException('studentId is required');
     }
-    student.student = user;
-    return await this.studentRepository.save(student);
+
+    return await this.studentRepository.save({
+      ...dto,
+      student: user,
+    });
   }
 
   public async updateStudent(dto: UpdateStudentDto): Promise<Student> {
-    const student = await this.studentRepository.findOneBy({
-      studentId: dto.studentId,
+    if (!dto.studentId) {
+      throw new BadRequestException('studentId is required');
+    }
+
+    const student = await this.studentRepository.findOne({
+      where: { student: { id: dto.studentId } },
     });
 
     if (!student) {
@@ -45,11 +51,26 @@ export class StudentService {
   }
 
   public async deleteStudent(id: string): Promise<void> {
-    await this.studentRepository.delete(id);
+    const student = await this.studentRepository.findOne({
+      where: { student: { id } },
+    });
+
+    if (student) {
+      student.active = false;
+      await this.studentRepository.save(student);
+      return;
+    }
+
+    throw new NotFoundException('Student not found');
   }
 
-  public async getStudent(id: string): Promise<Student> {
-    const student = await this.studentRepository.findOneBy({ album: id });
+  public async getStudent(
+    userId?: string,
+    numberId?: string,
+  ): Promise<Student> {
+    const student = await this.studentRepository.findOne({
+      where: [{ album: numberId }, { student: { id: userId } }],
+    });
 
     if (!student) {
       throw new NotFoundException('Student not found');

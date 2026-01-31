@@ -17,6 +17,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from '../guard/user.guard';
 import { RoleGuard } from '../guard/roles.guard';
 import { PersonModule } from 'src/person/person.module';
+import { StudentModule } from 'src/student/student.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { PersonModule } from 'src/person/person.module';
       }),
     }),
     PersonModule,
+    StudentModule,
   ],
   providers: [
     UserService,
@@ -40,6 +42,7 @@ import { PersonModule } from 'src/person/person.module';
     TokenService,
     AuthGuard,
     RoleGuard,
+    TypeConfigService,
     {
       provide: APP_GUARD,
       useClass: AuthGuard,

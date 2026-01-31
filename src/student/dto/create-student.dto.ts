@@ -3,8 +3,8 @@ import { IStudent } from '../model/student.model';
 
 export class CreateStudentDto implements Omit<IStudent, 'album' | 'active'> {
   @IsString()
-  @IsNotEmpty()
-  studentId: string;
+  @IsOptional()
+  studentId?: string;
 
   @IsString()
   @IsNotEmpty()
