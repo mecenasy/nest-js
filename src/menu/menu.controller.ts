@@ -58,6 +58,8 @@ export class MenuController {
     @Body() menuDto: AddMenuItemDto,
     @UploadedFile() file: Express.Multer.File,
   ): Promise<Menu> {
+    console.log('🚀 ~ MenuController ~ addMenuItem ~ file:', file);
+    console.log('🚀 ~ MenuController ~ addMenuItem ~ menuDto:', menuDto);
     if (file) {
       menuDto.image = file.filename;
     }
