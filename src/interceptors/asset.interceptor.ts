@@ -21,11 +21,20 @@ export class AssetsInterceptor implements NestInterceptor {
         const url = `${appUrl}:${port}`;
 
         const processObject = (obj: Record<string, any>) => {
-          const keys = Object.keys(obj).filter((key) =>
-            ['image', 'photo'].includes(key),
-          );
+          const keys = Object.keys(obj);
+
           keys.forEach((key) => {
-            obj[key] = `${url}/static/${obj[key]}`;
+            if (Array.isArray(obj[key])) {
+              obj[key].forEach((item) => {
+                if (item && typeof item === 'object') processObject(item);
+              });
+            } else if (obj[key] && typeof obj[key] === 'object') {
+              processObject(obj[key]);
+            } else {
+              if ((key === 'image' || key === 'photo') && obj[key]) {
+                obj[key] = `${url}/static/${obj[key]}`;
+              }
+            }
           });
         };
 

@@ -5,6 +5,8 @@ export class MenuResponse implements Omit<IMenu, 'role'> {
   constructor(private readonly partial?: Partial<MenuResponse>) {
     Object.assign(this, partial);
   }
+  @Expose()
+  id: string;
 
   @Expose()
   name: string;
@@ -26,4 +28,7 @@ export class MenuResponse implements Omit<IMenu, 'role'> {
 
   @Expose()
   image: string;
+
+  @Expose()
+  role?: string[];
 }

@@ -7,22 +7,24 @@ import {
   HttpStatus,
   NotFoundException,
   Post,
-  Request,
+  Query,
   SerializeOptions,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
 
 import { UserService } from './user.service';
-import { type Request as ExpressRequest } from 'express';
 import { ProfileResponse } from './response/profile.response';
 import { CreateUserDto } from './dto/create-user.dto';
 import { CurrentUserId } from 'src/decorators/current-user-id.decorator';
 import { File } from 'src/interceptors/fie.interceptor';
 import { UnflattenInterceptor } from 'src/interceptors/unflatten.interceptor';
-import { StudentService } from 'src/student/student.service';
 import { RegisterUserResponse } from './response/register-user.reposnse';
-import { Student } from 'src/student/entity/student.entity';
+import { AssetsInterceptor } from 'src/interceptors/asset.interceptor';
+import { Roles } from 'src/decorators/role.decorator';
+import { UserListResponse } from './response/user-list.response';
+import { GetUsersParams } from './params/get-users.params';
+import { UserQueryService } from './user-query.service';
 
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -31,12 +33,13 @@ import { Student } from 'src/student/entity/student.entity';
 export class UserController {
   constructor(
     private readonly userService: UserService,
-    private readonly studentService: StudentService,
+    private readonly userQueryService: UserQueryService,
   ) {}
 
   @Post('register')
   @HttpCode(HttpStatus.CREATED)
   @UseInterceptors(UnflattenInterceptor)
+  @UseInterceptors(AssetsInterceptor)
   public async registerUser(
     @Body() registerUser: CreateUserDto,
     @UploadedFile() file: Express.Multer.File,
@@ -44,38 +47,67 @@ export class UserController {
     if (file) {
       registerUser.image = file.path;
     }
-    let student: Student | undefined = undefined;
     const user = await this.userService.register(registerUser);
 
-    if (registerUser.student) {
-      const studentDto = {
-        ...registerUser.student,
-        user: user,
-        studentId: user.id,
-      };
-      student = await this.studentService.createStudent(studentDto);
-    }
     return new RegisterUserResponse({
       id: user.id,
       email: user.email,
       role: user.roles[0].name,
-      student,
+      student: user.student,
       person: user.person,
     });
   }
 
   @Get('profile')
-  public async getProfile(@CurrentUserId() id: string) {
+  @UseInterceptors(AssetsInterceptor)
+  public async getProfile(
+    @CurrentUserId() id: string,
+  ): Promise<ProfileResponse> {
     const user = await this.userService.findUserById(id);
 
     if (!user) {
       throw new NotFoundException();
     }
+
     return new ProfileResponse(user);
   }
 
-  @Get('admin')
-  public getProfile1(@Request() req: ExpressRequest) {
-    return new ProfileResponse(req.user);
+  @Get('all')
+  @Roles('admin')
+  @UseInterceptors(AssetsInterceptor)
+  public async getAllUsers(
+    @Query() query: GetUsersParams,
+  ): Promise<UserListResponse> {
+    const data: UserListResponse = await this.userQueryService.getUsersByQuery(
+      query,
+      true,
+    );
+
+    return new UserListResponse(data);
+  }
+
+  @Get('students')
+  @Roles('admin', 'teacher')
+  @UseInterceptors(AssetsInterceptor)
+  public async getAllStudents(
+    @Query() query: GetUsersParams,
+  ): Promise<UserListResponse> {
+    query.roles = ['student'];
+    const data: UserListResponse =
+      await this.userQueryService.getUsersByQuery(query);
+
+    return new UserListResponse(data);
+  }
+
+  @Get('teachers')
+  @UseInterceptors(AssetsInterceptor)
+  public async getAllTeacher(
+    @Query() query: GetUsersParams,
+  ): Promise<UserListResponse> {
+    query.roles = ['teacher'];
+    const data: UserListResponse =
+      await this.userQueryService.getUsersByQuery(query);
+
+    return new UserListResponse(data);
   }
 }

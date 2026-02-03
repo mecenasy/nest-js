@@ -1,4 +1,5 @@
 import {
+  IsArray,
   // IsArray,
   IsBoolean,
   IsEnum,
@@ -8,6 +9,8 @@ import {
   IsString,
 } from 'class-validator';
 import { IMenu, MenuSide } from '../model/menu.model';
+import { Transform } from 'class-transformer';
+import { splitElementByComa } from 'src/decorators/helper/split-element-by-coma';
 
 export class AddMenuItemDto implements Omit<IMenu, 'role'> {
   @IsOptional()
@@ -38,8 +41,9 @@ export class AddMenuItemDto implements Omit<IMenu, 'role'> {
   @IsNotEmpty()
   shortName: string;
 
-  // @IsArray()
+  @IsArray()
   // @IsString({ each: true })
   @IsNotEmpty()
+  @Transform(splitElementByComa)
   role: string[];
 }

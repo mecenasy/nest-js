@@ -6,10 +6,12 @@ import { Menu } from './entity/menu.entity';
 import { Role } from 'src/user/entity/role.entity';
 import { TypeConfigService } from 'src/configs/types.config.service';
 import { ConfigService } from '@nestjs/config';
+import { RoleService } from 'src/user/role/role.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Menu, Role])],
   providers: [
+    RoleService,
     MenuService,
     {
       provide: TypeConfigService,

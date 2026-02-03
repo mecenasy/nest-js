@@ -2,7 +2,9 @@ import {
   Body,
   ClassSerializerInterceptor,
   Controller,
+  Delete,
   Get,
+  Param,
   Post,
   SerializeOptions,
   UploadedFile,
@@ -27,7 +29,26 @@ export class MenuController {
   @Get()
   public async getMenu(@UserRoleId() role: string): Promise<MenuResponse[]> {
     const menus = await this.menuService.getMenu(role);
-    return menus.map((menu) => new MenuResponse(menu));
+    return menus.map((menu) => new MenuResponse({ ...menu, role: undefined }));
+  }
+
+  @Delete(':id')
+  @Roles('admin')
+  public async deleteMenu(@Param('id') id: string): Promise<void> {
+    await this.menuService.removeMenuItem(id);
+  }
+
+  @Get('all')
+  @Roles('admin')
+  public async getAllMenus(): Promise<MenuResponse[]> {
+    const menus = await this.menuService.getMenu();
+    return menus.map(
+      (menu) =>
+        new MenuResponse({
+          ...menu,
+          role: menu.role?.map((role) => role.name).flat(),
+        }),
+    );
   }
 
   @Post()

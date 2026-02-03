@@ -1,23 +1,37 @@
-import { Exclude } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
+import { IsArray, IsString, ValidateNested } from 'class-validator';
 
 export class UniversityMapResponse {
   constructor(private readonly partial?: Partial<UniversityMapResponse>) {
     Object.assign(this, partial);
   }
 
-  @Exclude()
+  @Expose()
+  @IsArray()
+  @ValidateNested()
+  @Type(() => DirectionRes)
   directions: DirectionRes[];
 
-  @Exclude()
+  @Expose()
+  @IsArray()
+  @ValidateNested()
+  @Type(() => SpecialtyRes)
   specialties: SpecialtyRes[];
 
-  @Exclude()
+  @Expose()
+  @IsArray()
+  @ValidateNested()
+  @Type(() => GroupRes)
   group: GroupRes[];
 
-  @Exclude()
+  @Expose()
+  @IsArray()
+  @ValidateNested()
+  @Type(() => YearRes)
   years: YearRes[];
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   roles: string[];
 }
 
@@ -26,13 +40,16 @@ export class DirectionRes {
     Object.assign(this, partial);
   }
 
-  @Exclude()
+  @Expose()
+  @IsString()
   name: string;
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   specialties: string[];
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   years: string[];
 }
 
@@ -41,16 +58,20 @@ export class SpecialtyRes {
     Object.assign(this, partial);
   }
 
-  @Exclude()
+  @Expose()
+  @IsString()
   name: string;
 
-  @Exclude()
+  @Expose()
+  @IsString()
   direction: string;
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   groups: string[];
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   years: string[];
 }
 
@@ -59,13 +80,16 @@ export class GroupRes {
     Object.assign(this, partial);
   }
 
-  @Exclude()
+  @Expose()
+  @IsString()
   name: string;
 
-  @Exclude()
+  @Expose()
+  @IsString()
   specialty: string;
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   years: string[];
 }
 
@@ -74,15 +98,19 @@ export class YearRes {
     Object.assign(this, partial);
   }
 
-  @Exclude()
+  @Expose()
+  @IsString()
   name: string;
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   directions: string[];
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   specialties: string[];
 
-  @Exclude()
+  @Expose()
+  @IsArray()
   groups: string[];
 }

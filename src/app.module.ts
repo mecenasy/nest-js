@@ -16,6 +16,7 @@ import { StudentModule } from './student/student.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { FileModule } from './file/file.module';
+import { MessageModule } from './message/message.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { FileModule } from './file/file.module';
     UniversityModule,
     StudentModule,
     FileModule,
+    MessageModule,
   ],
   controllers: [AppController],
   providers: [

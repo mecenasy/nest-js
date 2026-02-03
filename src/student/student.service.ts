@@ -8,7 +8,7 @@ import { Repository, DataSource } from 'typeorm';
 import { CreateStudentDto } from './dto/create-student.dto';
 import { UpdateStudentDto } from './dto/update-student.dto';
 import { Student } from './entity/student.entity';
-import { GetStudentsParams } from './params/get-students.params';
+import { GetStudentsParams } from '../student/params/get-students.params';
 import { User } from '../user/entity/user.entity';
 
 @Injectable()

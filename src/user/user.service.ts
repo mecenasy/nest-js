@@ -9,8 +9,8 @@ import { Repository } from 'typeorm';
 import { PasswordService } from '../user/password/password.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Role } from './entity/role.entity';
-import { IUser } from './model/user.model';
 import { PersonService } from 'src/person/person.service';
+import { StudentService } from 'src/student/student.service';
 
 @Injectable()
 export class UserService {
@@ -21,6 +21,7 @@ export class UserService {
     private readonly roleRepository: Repository<Role>,
     private readonly passwordService: PasswordService,
     private readonly personService: PersonService,
+    private readonly studentService: StudentService,
   ) {}
 
   public async register(registerUser: CreateUserDto): Promise<User> {
@@ -29,7 +30,18 @@ export class UserService {
     if (existingUser) {
       throw new ConflictException('User with this email already exists');
     }
-    return await this.createUser(registerUser);
+    const user = await this.createUser(registerUser);
+
+    if (registerUser.student) {
+      const studentDto = {
+        ...registerUser.student,
+        user: user,
+        studentId: user.id,
+      };
+      await this.studentService.createStudent(studentDto);
+    }
+
+    return user;
   }
 
   public async findUserByEmail(email: string): Promise<User | null> {
@@ -52,8 +64,8 @@ export class UserService {
   public async findUserById(id: string): Promise<User | null> {
     return this.userRepository
       .createQueryBuilder('user')
-      .leftJoinAndSelect('user.roles', 'roles')
       .leftJoinAndSelect('user.person', 'person')
+      .leftJoinAndSelect('user.roles', 'roles')
       .leftJoinAndSelect('user.student', 'student')
       .leftJoinAndSelect('person.address', 'address')
       .where('user.id = :id', { id })

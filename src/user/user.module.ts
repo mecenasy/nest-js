@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -18,6 +18,10 @@ import { AuthGuard } from '../guard/user.guard';
 import { RoleGuard } from '../guard/roles.guard';
 import { PersonModule } from 'src/person/person.module';
 import { StudentModule } from 'src/student/student.module';
+import { RoleService } from './role/role.service';
+import { FilterService } from './filter/filter.service';
+import { UniversityModule } from 'src/university/university.module';
+import { UserQueryService } from './user-query.service';
 
 @Module({
   imports: [
@@ -34,6 +38,7 @@ import { StudentModule } from 'src/student/student.module';
     }),
     PersonModule,
     StudentModule,
+    forwardRef(() => UniversityModule),
   ],
   providers: [
     UserService,
@@ -51,7 +56,11 @@ import { StudentModule } from 'src/student/student.module';
       provide: APP_GUARD,
       useClass: RoleGuard,
     },
+    RoleService,
+    FilterService,
+    UserQueryService,
   ],
   controllers: [UserController, AuthController],
+  exports: [RoleService],
 })
 export class UserModule {}

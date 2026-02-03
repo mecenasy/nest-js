@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { User } from '../entity/user.entity';
 import { PersonResponse } from 'src/person/response/person.response';
 import { StudentResponse } from 'src/student/response/student.response';
@@ -20,5 +20,6 @@ export class ProfileResponse extends PersonResponse {
   @Expose()
   @ValidateNested()
   @IsOptional()
+  @Type(() => StudentResponse)
   student?: StudentResponse;
 }

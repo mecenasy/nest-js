@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { CreateStudentDto } from './dto/create-student.dto';
 import { UpdateStudentDto } from './dto/update-student.dto';
-import { GetStudentsParams } from './params/get-students.params';
+import { GetStudentsParams } from '../student/params/get-students.params';
 import { StudentService } from './student.service';
 import { Student } from './entity/student.entity';
 
