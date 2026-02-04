@@ -54,6 +54,7 @@ export class MessageService {
       const attachments = files.map((file) =>
         this.attachmentRepository.create({
           name: file.filename,
+          originalName: file.originalname,
         }),
       );
       createMessage.files = attachments;

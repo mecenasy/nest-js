@@ -12,10 +12,12 @@ import {
 } from 'typeorm';
 import { Attachment } from './attachment.entity';
 import { User } from 'src/user/entity/user.entity';
+import {} from '../model/message.model';
+import { IMessage } from '../model/message.model';
 
 @Entity()
 @Tree('materialized-path')
-export class Message {
+export class Message implements IMessage {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-export class Message1770133100645 implements MigrationInterface {
-  name = 'Message1770133100645';
+export class Message1770241307443 implements MigrationInterface {
+  name = 'Message1770241307443';
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
-      `CREATE TABLE "attachment" ("id" SERIAL NOT NULL, "name" character varying NOT NULL, "messageId" uuid, CONSTRAINT "PK_d2a80c3a8d467f08a750ac4b420" PRIMARY KEY ("id"))`,
+      `CREATE TABLE "attachment" ("id" SERIAL NOT NULL, "name" character varying NOT NULL, "originalName" character varying NOT NULL, "messageId" uuid, CONSTRAINT "PK_d2a80c3a8d467f08a750ac4b420" PRIMARY KEY ("id"))`,
     );
     await queryRunner.query(
       `CREATE TABLE "message" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "title" character varying NOT NULL, "content" text NOT NULL, "isReaded" boolean NOT NULL DEFAULT false, "mpath" character varying DEFAULT '', "fromId" uuid NOT NULL, "toId" uuid NOT NULL, "parentId" uuid, CONSTRAINT "PK_ba01f0a3e0123651915008bc578" PRIMARY KEY ("id"))`,

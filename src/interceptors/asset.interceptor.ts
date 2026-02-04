@@ -5,15 +5,24 @@ import {
   Injectable,
   NestInterceptor,
 } from '@nestjs/common';
+import { Reflector } from '@nestjs/core';
 import { map, Observable } from 'rxjs';
 import { AppConfig } from 'src/configs/app.config';
 import { TypeConfigService } from 'src/configs/types.config.service';
+import { IS_ASSETS_PATH } from 'src/decorators/assets-path.decorator';
 
 @Injectable()
 export class AssetsInterceptor implements NestInterceptor {
-  constructor(private readonly configService: TypeConfigService) {}
+  constructor(
+    private reflector: Reflector,
+    private readonly configService: TypeConfigService,
+  ) {}
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+    const path = this.reflector.get<string>(
+      IS_ASSETS_PATH,
+      context.getHandler(),
+    );
     return next.handle().pipe(
       map((data) => {
         const appUrl = this.configService.get<AppConfig>('app')?.appUrl;
@@ -31,8 +40,11 @@ export class AssetsInterceptor implements NestInterceptor {
             } else if (obj[key] && typeof obj[key] === 'object') {
               processObject(obj[key]);
             } else {
-              if ((key === 'image' || key === 'photo') && obj[key]) {
-                obj[key] = `${url}/static/${obj[key]}`;
+              if (
+                (key === 'image' || key === 'photo' || key === 'path') &&
+                obj[key]
+              ) {
+                obj[key] = `${url}/static${path ?? ''}/${obj[key]}`;
               }
             }
           });

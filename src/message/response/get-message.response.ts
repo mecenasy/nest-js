@@ -6,6 +6,21 @@ import {
   ValidateNested,
 } from 'class-validator';
 
+export class FileRes {
+  constructor(partial: Partial<FileRes>) {
+    Object.assign(this, partial);
+  }
+
+  @Expose()
+  @IsString()
+  @IsNotEmpty()
+  name: string;
+
+  @Expose()
+  @IsString()
+  @IsNotEmpty()
+  path: string;
+}
 export class GetMessageResponse {
   constructor(partial: Partial<GetMessageResponse>) {
     Object.assign(this, partial);
@@ -49,5 +64,7 @@ export class GetMessageResponse {
   @Expose()
   @IsString()
   @IsOptional()
-  files?: string[];
+  @ValidateNested()
+  @Type(() => FileRes)
+  files?: FileRes[];
 }

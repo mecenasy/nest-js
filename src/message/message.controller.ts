@@ -18,6 +18,7 @@ import { SendMessageResponse } from './response/send-message.response';
 import { GetMessagesResponse } from './response/get-messages.response';
 import { Message } from './entity/message.entity';
 import { GetMessageResponse } from './response/get-message.response';
+import { AssetsPath } from 'src/decorators/assets-path.decorator';
 
 @Controller('message')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -59,6 +60,7 @@ export class MessageController {
   }
 
   @Get(':id')
+  @AssetsPath('/messages')
   public async getMessageById(@Param('id') id: string) {
     const message = await this.messageService.getMessageById(id);
 
@@ -71,7 +73,10 @@ export class MessageController {
       from: message.from.id,
       to: message.to.id,
       replies: message.replies?.map(this.convertMessage),
-      files: message.files?.map((file) => file.name),
+      files: message.files?.map((file) => ({
+        path: file.name,
+        name: file.originalName,
+      })),
     });
   };
 }
