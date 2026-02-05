@@ -7,6 +7,7 @@ import { GetUsersParams } from './params/get-users.params';
 import { ProfileResponse } from './response/profile.response';
 import { PaginationRes, UserListResponse } from './response/user-list.response';
 import { UniversityService } from 'src/university/university.service';
+// import { SimpleUserResponse } from './response/simple-user-list.response';
 
 @Injectable()
 export class UserQueryService {
@@ -34,6 +35,23 @@ export class UserQueryService {
       filters,
       filtersMap,
     };
+  }
+  public async getSimpleUsers(roles: string[]): Promise<User[]> {
+    const qr = this.userRepository
+      .createQueryBuilder('user')
+      .leftJoin('user.person', 'person')
+      .leftJoinAndSelect('user.roles', 'roles')
+      .andWhere('roles.name IN (:...roles)', { roles })
+      .select([
+        'user.id',
+        'user.email',
+        'person.name',
+        'user.email',
+        'person.photo',
+        'person.surname',
+      ]);
+
+    return await qr.getMany();
   }
 
   public async getUsers(

@@ -8,6 +8,7 @@ import {
   NotFoundException,
   Post,
   Query,
+  Param,
   SerializeOptions,
   UploadedFile,
   UseInterceptors,
@@ -19,12 +20,14 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { CurrentUserId } from 'src/decorators/current-user-id.decorator';
 import { File } from 'src/interceptors/fie.interceptor';
 import { UnflattenInterceptor } from 'src/interceptors/unflatten.interceptor';
-import { RegisterUserResponse } from './response/register-user.reposnse';
+import { RegisterUserResponse } from './response/register-user.response';
 import { AssetsInterceptor } from 'src/interceptors/asset.interceptor';
 import { Roles } from 'src/decorators/role.decorator';
 import { UserListResponse } from './response/user-list.response';
 import { GetUsersParams } from './params/get-users.params';
 import { UserQueryService } from './user-query.service';
+import { SimpleUserResponse } from './response/simple-user-list.response';
+import { getRolesByType } from './helper/roles-by-type';
 
 @Controller('user')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -109,5 +112,26 @@ export class UserController {
       await this.userQueryService.getUsersByQuery(query);
 
     return new UserListResponse(data);
+  }
+
+  @Get('simple/:type')
+  @UseInterceptors(AssetsInterceptor)
+  public async getSimpleUsers(
+    @Param('type') type: string,
+  ): Promise<SimpleUserResponse[]> {
+    const data = await this.userQueryService.getSimpleUsers(
+      getRolesByType(type),
+    );
+
+    return data.map(
+      (user) =>
+        new SimpleUserResponse({
+          id: user.id,
+          fullName: `${user.person.name} ${user.person.surname}`,
+          email: user.email,
+          photo: user.person.photo,
+        }),
+    );
+    // return UserListResponse(data);
   }
 }
