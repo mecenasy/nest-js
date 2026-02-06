@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Brackets, Repository } from 'typeorm';
 import { Message } from './entity/message.entity';
 import { User } from 'src/user/entity/user.entity';
 import { SendMessageDto } from './dto/send-message.dto';
@@ -64,38 +64,107 @@ export class MessageService {
   }
 
   public async getMessageById(id: string): Promise<Message> {
-    const message = await this.messageRepository.findOne({
+    const repo = this.dataSource.getTreeRepository(Message);
+    const message = await repo.findOne({
       where: { id },
-      relations: ['from', 'to', 'files'],
+      relations: ['parent'],
     });
 
     if (!message) {
       throw new NotFoundException('Message not found');
     }
 
-    const tree = await this.dataSource
-      .getTreeRepository(Message)
-      .findDescendantsTree(message, {
-        relations: ['from', 'to', 'files'],
-      });
+    const ancestors = await repo.findAncestors(message, {
+      relations: ['parent'],
+    });
+    const rootNode = ancestors.find((m) => !m.parent) || message;
 
-    if (!tree) {
+    const root = await repo.findOne({
+      where: { id: rootNode.id },
+      relations: ['from', 'to', 'files'],
+    });
+
+    if (!root) {
       throw new NotFoundException('Message not found');
     }
+
+    const tree = await repo.findDescendantsTree(root, {
+      relations: ['from', 'to', 'files'],
+    });
 
     return tree;
   }
 
   public async getMessages(userId: string): Promise<[Message[], number]> {
-    const messages = await this.messageRepository
+    const qb = this.messageRepository
       .createQueryBuilder('message')
       .leftJoin('message.parent', 'parent')
-      .select(['message.id', 'message.title', 'message.isReaded'])
-      .where('message.fromId = :userId', { userId })
+      .select([
+        'message.id',
+        'message.title',
+        'message.isReaded',
+        'message.createdAt',
+        'parent.id',
+      ])
+      .addSelect(
+        `(NOT EXISTS (
+          SELECT 1 FROM message c 
+          WHERE c.mpath LIKE message.mpath || '%' 
+          AND c."toId" = :userId 
+          AND c."isReaded" = false
+        ))`,
+        'is_thread_read',
+      )
+      .where(
+        new Brackets((qr) => {
+          qr.where('message.fromId = :userId', { userId }).orWhere(
+            'message.toId = :userId',
+            { userId },
+          );
+        }),
+      )
       .andWhere('message.parent IS NULL')
       .orderBy('message.createdAt', 'DESC')
-      .getManyAndCount();
+      .setParameter('userId', userId);
 
-    return messages;
+    const { entities, raw } = await qb.getRawAndEntities();
+    const count = await qb.getCount();
+
+    entities.forEach((entity, index) => {
+      if (raw[index]) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        entity.isReaded = !!raw[index].is_thread_read;
+      }
+    });
+
+    return [entities, count];
+  }
+
+  public async getUnReadedMessage(userId: string): Promise<number> {
+    const count = await this.messageRepository
+      .createQueryBuilder('message')
+      .where('message.toId = :userId', { userId })
+      .andWhere('message.isReaded = :isReaded', { isReaded: false })
+      .getCount();
+
+    return count;
+  }
+
+  public async setReadedMessage(
+    userId: string,
+    messageId: string,
+  ): Promise<Message> {
+    const message = await this.messageRepository.findOneBy({
+      id: messageId,
+      to: { id: userId },
+    });
+
+    if (!message) {
+      throw new NotFoundException('Message not found');
+    }
+
+    message.isReaded = true;
+
+    return await this.messageRepository.save(message);
   }
 }

@@ -5,7 +5,7 @@ export const getRolesByType = (type: string) => {
     case 'teacher':
       return ['student', 'admin'];
     case 'student':
-      return ['teacher'];
+      return ['teacher', 'admin'];
     default:
       return ['admin', 'teacher', 'student'];
   }

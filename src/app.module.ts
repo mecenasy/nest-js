@@ -17,6 +17,8 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { FileModule } from './file/file.module';
 import { MessageModule } from './message/message.module';
+import { NotificationModule } from './notification/notification.module';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
@@ -43,6 +45,9 @@ import { MessageModule } from './message/message.module';
         abortEarly: true,
       },
     }),
+    EventEmitterModule.forRoot({
+      global: true,
+    }),
     TasksModule,
     UserModule,
     MenuModule,
@@ -50,6 +55,7 @@ import { MessageModule } from './message/message.module';
     StudentModule,
     FileModule,
     MessageModule,
+    NotificationModule,
   ],
   controllers: [AppController],
   providers: [

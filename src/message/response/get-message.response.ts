@@ -1,5 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import {
+  IsBoolean,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -67,4 +68,8 @@ export class GetMessageResponse {
   @ValidateNested()
   @Type(() => FileRes)
   files?: FileRes[];
+
+  @Expose()
+  @IsBoolean()
+  isReaded: boolean;
 }

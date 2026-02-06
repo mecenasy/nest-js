@@ -5,6 +5,7 @@ import {
   Get,
   Param,
   Post,
+  Put,
   SerializeOptions,
   UploadedFiles,
   UseInterceptors,
@@ -19,13 +20,17 @@ import { GetMessagesResponse } from './response/get-messages.response';
 import { Message } from './entity/message.entity';
 import { GetMessageResponse } from './response/get-message.response';
 import { AssetsPath } from 'src/decorators/assets-path.decorator';
+import { EventEmitter2 } from '@nestjs/event-emitter';
 
 @Controller('message')
 @UseInterceptors(ClassSerializerInterceptor)
 @UseInterceptors(AssetsInterceptor)
 @SerializeOptions({ strategy: 'excludeAll' })
 export class MessageController {
-  constructor(private readonly messageService: MessageService) {}
+  constructor(
+    private readonly messageService: MessageService,
+    private readonly eventEmitter: EventEmitter2,
+  ) {}
 
   @Post('send')
   @UseInterceptors(FilesMessages)
@@ -35,6 +40,8 @@ export class MessageController {
     @CurrentUserId() id: string,
   ) {
     const message = await this.messageService.saveMessage(body, files, id);
+
+    this.eventEmitter.emit('msg.sent', { userId: message.to.id, count: 1 });
     return new SendMessageResponse({
       ...message,
       from: message.from.id,
@@ -58,25 +65,39 @@ export class MessageController {
       count,
     });
   }
+  @Put('readed/:messageId')
+  public async setReadedMessage(
+    @CurrentUserId() userId: string,
+    @Param('messageId') messageId: string,
+  ): Promise<void> {
+    await this.messageService.setReadedMessage(userId, messageId);
+  }
 
   @Get(':id')
   @AssetsPath('/messages')
-  public async getMessageById(@Param('id') id: string) {
+  public async getMessageById(
+    @Param('id') id: string,
+    @CurrentUserId() userId: string,
+  ) {
     const message = await this.messageService.getMessageById(id);
 
-    return this.convertMessage(message);
+    return this.convertMessage(userId)(message);
   }
 
-  private convertMessage = (message: Message): GetMessageResponse => {
-    return new GetMessageResponse({
-      ...message,
-      from: message.from.id,
-      to: message.to.id,
-      replies: message.replies?.map(this.convertMessage),
-      files: message.files?.map((file) => ({
-        path: file.name,
-        name: file.originalName,
-      })),
-    });
-  };
+  private convertMessage =
+    (userId: string) =>
+    (message: Message): GetMessageResponse => {
+      return new GetMessageResponse({
+        ...message,
+        from: message.from.id,
+        to: message.to.id,
+        replies: message.replies?.map(this.convertMessage(userId)),
+        files: message.files?.map((file) => ({
+          path: file.name,
+          name: file.originalName,
+        })),
+        isReaded: userId === message.from.id ? true : message.isReaded,
+        // isReaded: message.isReaded,
+      });
+    };
 }

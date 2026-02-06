@@ -18,5 +18,6 @@ import { User } from 'src/user/entity/user.entity';
       useExisting: ConfigService,
     },
   ],
+  exports: [MessageService],
 })
 export class MessageModule {}
