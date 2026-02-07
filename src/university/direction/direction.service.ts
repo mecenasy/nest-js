@@ -1,11 +1,11 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { DataSource, EntityManager, EntityTarget } from 'typeorm';
-import { Direction } from '../entity/direction.entity';
 import { CreateDirectionDto } from '../dto/create-direction.dto';
 import { YearService } from '../year/year.service';
 import { IDto } from '../model/dto.model';
 import { DirectionRes } from '../response/university-map.response';
 import { SpecialtyService } from '../specialty/specialty.service';
+import { Direction } from './entity/direction.entity';
 
 @Injectable()
 export class DirectionService {

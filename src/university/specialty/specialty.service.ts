@@ -1,13 +1,13 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { DataSource, EntityManager, EntityTarget } from 'typeorm';
-import { Specialty } from '../entity/specialty.entity';
+import { Specialty } from './entity/specialty.entity';
 import { CreateSpecialtyDto } from '../dto/create-specialty.dto';
 import { CreateSpecialty } from '../dto/create-direction.dto';
-import { GroupService } from '../group/group.service';
 import { YearService } from '../year/year.service';
-import { Direction } from '../entity/direction.entity';
 import { IDto } from '../model/dto.model';
 import { SpecialtyRes } from '../response/university-map.response';
+import { GroupService } from '../group/group.service';
+import { Direction } from '../direction/entity/direction.entity';
 
 @Injectable()
 export class SpecialtyService {

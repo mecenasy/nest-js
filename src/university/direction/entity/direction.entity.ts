@@ -6,8 +6,8 @@ import {
   PrimaryColumn,
 } from 'typeorm';
 import { IDirection } from '../model/direction.model';
-import { Specialty } from './specialty.entity';
-import { Year } from './year.entity';
+import { Specialty } from 'src/university/specialty/entity/specialty.entity';
+import { Year } from 'src/university/year/entity/year.entity';
 
 @Entity()
 export class Direction implements IDirection {

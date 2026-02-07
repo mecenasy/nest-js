@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { UniversityMapResponse } from './response/university-map.response';
 import { RoleService } from 'src/user/role/role.service';
 import { DirectionService } from './direction/direction.service';
-import { GroupService } from './group/group.service';
 import { YearService } from './year/year.service';
 import { CreateDirectionDto } from './dto/create-direction.dto';
 import { CreateSpecialtyDto } from './dto/create-specialty.dto';
 import { CreateGroupDto } from './dto/create-group.dto';
 import { CreateYearDto } from './dto/create-year.dto';
 import { SpecialtyService } from './specialty/specialty.service';
+import { GroupService } from './group/group.service';
 
 @Injectable()
 export class UniversityService {

@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { DirectionService } from 'src/university/direction/direction.service';
-import { GroupService } from 'src/university/group/group.service';
 import { SpecialtyService } from 'src/university/specialty/specialty.service';
 import { YearService } from 'src/university/year/year.service';
 import { RoleService } from '../role/role.service';
 import { FilterRes } from '../response/user-list.response';
+import { GroupService } from 'src/university/group/group.service';
 
 @Injectable()
 export class FilterService {

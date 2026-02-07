@@ -16,6 +16,7 @@ import { Person } from '../../person/entity/person.entity';
 import { Role } from './role.entity';
 import { Student } from 'src/student/entity/student.entity';
 import { Message } from 'src/message/entity/message.entity';
+import { Subject } from 'src/university/subject/entity/subject.entity';
 
 @Entity()
 export class User implements IUser {
@@ -74,4 +75,10 @@ export class User implements IUser {
     nullable: true,
   })
   tasks: Task[];
+
+  @OneToMany(() => Subject, (subject) => subject.teacher)
+  subjects: Subject[];
+
+  @OneToMany(() => Subject, (subject) => subject.teacher)
+  timeTable: Subject[];
 }

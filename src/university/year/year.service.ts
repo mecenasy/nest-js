@@ -1,12 +1,12 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { DataSource, EntityTarget } from 'typeorm';
-import { Year } from '../entity/year.entity';
 import { CreateYearDto } from '../dto/create-year.dto';
-import { Direction } from '../entity/direction.entity';
-import { Specialty } from '../entity/specialty.entity';
-import { Group } from '../entity/group.entity';
+import { Specialty } from '../specialty/entity/specialty.entity';
 import { IDto } from '../model/dto.model';
 import { YearRes } from '../response/university-map.response';
+import { Year } from './entity/year.entity';
+import { Direction } from '../direction/entity/direction.entity';
+import { Group } from '../group/entity/group.entity';
 
 @Injectable()
 export class YearService {
