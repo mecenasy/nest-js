@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
-import { data } from './data/1770413501664-time-table-data';
+import { schedule } from './data/generate.data';
 
 export class TimeTableData1770413763210 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await Promise.all(
-      data.map(async (d) => {
+      schedule.map(async (d) => {
         await queryRunner.query(`
           WITH subject AS (
             SELECT s.id, u.id as teacher_id FROM subject s INNER JOIN "user" u ON s."teacherId" = u.id

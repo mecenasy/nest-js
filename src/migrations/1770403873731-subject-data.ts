@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
-import { data } from './data/1770403873731-subject-data';
+import { subjects } from './data/generate.data';
 
 export class SubjectData1770403873731 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await Promise.all(
-      data.map(async (subject) => {
+      subjects.map(async (subject) => {
         await queryRunner.query(`
         WITH founded_user AS (
           SELECT u.id, u.email from "user" u
