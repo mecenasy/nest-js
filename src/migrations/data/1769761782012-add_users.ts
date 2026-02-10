@@ -61,7 +61,7 @@ export const users = [
       name: 'Marek',
       surname: 'Wiśniewski',
       phone: 500000001,
-      photo: 'photo_1.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 38',
@@ -85,7 +85,7 @@ export const users = [
       name: 'Agnieszka',
       surname: 'Zieliński',
       phone: 500000002,
-      photo: 'photo_2.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 44',
@@ -109,7 +109,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Lewandowski',
       phone: 500000003,
-      photo: 'photo_3.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 95',
@@ -127,7 +127,7 @@ export const users = [
       name: 'Anna',
       surname: 'Wiśniewski',
       phone: 500000004,
-      photo: 'photo_4.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 36',
@@ -145,7 +145,7 @@ export const users = [
       name: 'Anna',
       surname: 'Wiśniewski',
       phone: 500000005,
-      photo: 'photo_5.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 69',
@@ -169,7 +169,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Lewandowski',
       phone: 500000006,
-      photo: 'photo_6.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 49',
@@ -187,7 +187,7 @@ export const users = [
       name: 'Marek',
       surname: 'Lewandowski',
       phone: 500000007,
-      photo: 'photo_7.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 51',
@@ -205,7 +205,7 @@ export const users = [
       name: 'Agnieszka',
       surname: 'Kowalczyk',
       phone: 500000008,
-      photo: 'photo_8.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 89',
@@ -223,7 +223,7 @@ export const users = [
       name: 'Piotr',
       surname: 'Kamiński',
       phone: 500000009,
-      photo: 'photo_9.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 26',
@@ -241,7 +241,7 @@ export const users = [
       name: 'Marek',
       surname: 'Kamiński',
       phone: 500000010,
-      photo: 'photo_10.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 89',
@@ -265,7 +265,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Zieliński',
       phone: 500000011,
-      photo: 'photo_11.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 23',
@@ -283,7 +283,7 @@ export const users = [
       name: 'Maria',
       surname: 'Wiśniewski',
       phone: 500000012,
-      photo: 'photo_12.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 24',
@@ -301,7 +301,7 @@ export const users = [
       name: 'Maria',
       surname: 'Wiśniewski',
       phone: 500000013,
-      photo: 'photo_13.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 87',
@@ -325,7 +325,7 @@ export const users = [
       name: 'Katarzyna',
       surname: 'Kowalski',
       phone: 500000014,
-      photo: 'photo_14.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 86',
@@ -349,7 +349,7 @@ export const users = [
       name: 'Maria',
       surname: 'Kamiński',
       phone: 500000015,
-      photo: 'photo_15.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 57',
@@ -373,7 +373,7 @@ export const users = [
       name: 'Katarzyna',
       surname: 'Kowalczyk',
       phone: 500000016,
-      photo: 'photo_16.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 40',
@@ -391,7 +391,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Zieliński',
       phone: 500000017,
-      photo: 'photo_17.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 41',
@@ -415,7 +415,7 @@ export const users = [
       name: 'Jan',
       surname: 'Nowak',
       phone: 500000018,
-      photo: 'photo_18.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 18',
@@ -439,7 +439,7 @@ export const users = [
       name: 'Anna',
       surname: 'Zieliński',
       phone: 500000019,
-      photo: 'photo_19.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 53',
@@ -457,7 +457,7 @@ export const users = [
       name: 'Katarzyna',
       surname: 'Kamiński',
       phone: 500000020,
-      photo: 'photo_20.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 2',
@@ -475,7 +475,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Kowalczyk',
       phone: 500000021,
-      photo: 'photo_21.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 71',
@@ -493,7 +493,7 @@ export const users = [
       name: 'Katarzyna',
       surname: 'Kowalski',
       phone: 500000022,
-      photo: 'photo_22.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 33',
@@ -511,7 +511,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Nowak',
       phone: 500000023,
-      photo: 'photo_23.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 85',
@@ -529,7 +529,7 @@ export const users = [
       name: 'Anna',
       surname: 'Lewandowski',
       phone: 500000024,
-      photo: 'photo_24.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 11',
@@ -547,7 +547,7 @@ export const users = [
       name: 'Piotr',
       surname: 'Zieliński',
       phone: 500000025,
-      photo: 'photo_25.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 4',
@@ -565,7 +565,7 @@ export const users = [
       name: 'Agnieszka',
       surname: 'Kowalski',
       phone: 500000026,
-      photo: 'photo_26.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 94',
@@ -583,7 +583,7 @@ export const users = [
       name: 'Jan',
       surname: 'Kowalski',
       phone: 500000027,
-      photo: 'photo_27.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 89',
@@ -601,7 +601,7 @@ export const users = [
       name: 'Anna',
       surname: 'Kowalski',
       phone: 500000028,
-      photo: 'photo_28.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 80',
@@ -625,7 +625,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kowalski',
       phone: 500000029,
-      photo: 'photo_29.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 17',
@@ -643,7 +643,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Kamiński',
       phone: 500000030,
-      photo: 'photo_30.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 99',
@@ -667,7 +667,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Lewandowski',
       phone: 500000031,
-      photo: 'photo_31.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 14',
@@ -685,7 +685,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kowalczyk',
       phone: 500000032,
-      photo: 'photo_32.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 4',
@@ -709,7 +709,7 @@ export const users = [
       name: 'Anna',
       surname: 'Zieliński',
       phone: 500000033,
-      photo: 'photo_33.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 34',
@@ -733,7 +733,7 @@ export const users = [
       name: 'Anna',
       surname: 'Wójcik',
       phone: 500000034,
-      photo: 'photo_34.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 97',
@@ -751,7 +751,7 @@ export const users = [
       name: 'Maria',
       surname: 'Kowalski',
       phone: 500000035,
-      photo: 'photo_35.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 1',
@@ -769,7 +769,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Wójcik',
       phone: 500000036,
-      photo: 'photo_36.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 15',
@@ -787,7 +787,7 @@ export const users = [
       name: 'Anna',
       surname: 'Lewandowski',
       phone: 500000037,
-      photo: 'photo_37.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 39',
@@ -811,7 +811,7 @@ export const users = [
       name: 'Marek',
       surname: 'Lewandowski',
       phone: 500000038,
-      photo: 'photo_38.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 76',
@@ -829,7 +829,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kamiński',
       phone: 500000039,
-      photo: 'photo_39.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 58',
@@ -853,7 +853,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Zieliński',
       phone: 500000040,
-      photo: 'photo_40.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 10',
@@ -877,7 +877,7 @@ export const users = [
       name: 'Maria',
       surname: 'Kowalczyk',
       phone: 500000041,
-      photo: 'photo_41.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 36',
@@ -901,7 +901,7 @@ export const users = [
       name: 'Jan',
       surname: 'Kowalczyk',
       phone: 500000042,
-      photo: 'photo_42.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 90',
@@ -919,7 +919,7 @@ export const users = [
       name: 'Piotr',
       surname: 'Lewandowski',
       phone: 500000043,
-      photo: 'photo_43.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 90',
@@ -937,7 +937,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kowalczyk',
       phone: 500000044,
-      photo: 'photo_44.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 86',
@@ -961,7 +961,7 @@ export const users = [
       name: 'Marek',
       surname: 'Kamiński',
       phone: 500000045,
-      photo: 'photo_45.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 92',
@@ -979,7 +979,7 @@ export const users = [
       name: 'Maria',
       surname: 'Zieliński',
       phone: 500000046,
-      photo: 'photo_46.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 34',
@@ -997,7 +997,7 @@ export const users = [
       name: 'Piotr',
       surname: 'Kamiński',
       phone: 500000047,
-      photo: 'photo_47.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 59',
@@ -1021,7 +1021,7 @@ export const users = [
       name: 'Katarzyna',
       surname: 'Zieliński',
       phone: 500000048,
-      photo: 'photo_48.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 20',
@@ -1039,7 +1039,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Kowalczyk',
       phone: 500000049,
-      photo: 'photo_49.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 47',
@@ -1057,7 +1057,7 @@ export const users = [
       name: 'Jan',
       surname: 'Wiśniewski',
       phone: 500000050,
-      photo: 'photo_50.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 95',
@@ -1081,7 +1081,7 @@ export const users = [
       name: 'Anna',
       surname: 'Kowalski',
       phone: 500000051,
-      photo: 'photo_51.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 87',
@@ -1099,7 +1099,7 @@ export const users = [
       name: 'Marek',
       surname: 'Kowalski',
       phone: 500000052,
-      photo: 'photo_52.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 62',
@@ -1123,7 +1123,7 @@ export const users = [
       name: 'Maria',
       surname: 'Wiśniewski',
       phone: 500000053,
-      photo: 'photo_53.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 90',
@@ -1141,7 +1141,7 @@ export const users = [
       name: 'Marek',
       surname: 'Wójcik',
       phone: 500000054,
-      photo: 'photo_54.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 73',
@@ -1159,7 +1159,7 @@ export const users = [
       name: 'Katarzyna',
       surname: 'Zieliński',
       phone: 500000055,
-      photo: 'photo_55.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 81',
@@ -1177,7 +1177,7 @@ export const users = [
       name: 'Jan',
       surname: 'Lewandowski',
       phone: 500000056,
-      photo: 'photo_56.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 81',
@@ -1195,7 +1195,7 @@ export const users = [
       name: 'Piotr',
       surname: 'Nowak',
       phone: 500000057,
-      photo: 'photo_57.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 76',
@@ -1213,7 +1213,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Kowalczyk',
       phone: 500000058,
-      photo: 'photo_58.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 42',
@@ -1231,7 +1231,7 @@ export const users = [
       name: 'Jan',
       surname: 'Kowalczyk',
       phone: 500000059,
-      photo: 'photo_59.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 36',
@@ -1249,7 +1249,7 @@ export const users = [
       name: 'Agnieszka',
       surname: 'Lewandowski',
       phone: 500000060,
-      photo: 'photo_60.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 32',
@@ -1267,7 +1267,7 @@ export const users = [
       name: 'Katarzyna',
       surname: 'Wójcik',
       phone: 500000061,
-      photo: 'photo_61.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 54',
@@ -1285,7 +1285,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Nowak',
       phone: 500000062,
-      photo: 'photo_62.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 17',
@@ -1303,7 +1303,7 @@ export const users = [
       name: 'Jan',
       surname: 'Wiśniewski',
       phone: 500000063,
-      photo: 'photo_63.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 88',
@@ -1321,7 +1321,7 @@ export const users = [
       name: 'Marek',
       surname: 'Lewandowski',
       phone: 500000064,
-      photo: 'photo_64.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 94',
@@ -1339,7 +1339,7 @@ export const users = [
       name: 'Piotr',
       surname: 'Lewandowski',
       phone: 500000065,
-      photo: 'photo_65.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 44',
@@ -1363,7 +1363,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kamiński',
       phone: 500000066,
-      photo: 'photo_66.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 86',
@@ -1387,7 +1387,7 @@ export const users = [
       name: 'Piotr',
       surname: 'Kowalczyk',
       phone: 500000067,
-      photo: 'photo_67.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 68',
@@ -1405,7 +1405,7 @@ export const users = [
       name: 'Agnieszka',
       surname: 'Wójcik',
       phone: 500000068,
-      photo: 'photo_68.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 33',
@@ -1423,7 +1423,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Wiśniewski',
       phone: 500000069,
-      photo: 'photo_69.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 56',
@@ -1447,7 +1447,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kowalski',
       phone: 500000070,
-      photo: 'photo_70.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 65',
@@ -1465,7 +1465,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Wójcik',
       phone: 500000071,
-      photo: 'photo_71.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 48',
@@ -1489,7 +1489,7 @@ export const users = [
       name: 'Agnieszka',
       surname: 'Wójcik',
       phone: 500000072,
-      photo: 'photo_72.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 65',
@@ -1507,7 +1507,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kowalczyk',
       phone: 500000073,
-      photo: 'photo_73.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 75',
@@ -1531,7 +1531,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kowalski',
       phone: 500000074,
-      photo: 'photo_74.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 22',
@@ -1555,7 +1555,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Lewandowski',
       phone: 500000075,
-      photo: 'photo_75.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 75',
@@ -1573,7 +1573,7 @@ export const users = [
       name: 'Jan',
       surname: 'Lewandowski',
       phone: 500000076,
-      photo: 'photo_76.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 60',
@@ -1597,7 +1597,7 @@ export const users = [
       name: 'Agnieszka',
       surname: 'Lewandowski',
       phone: 500000077,
-      photo: 'photo_77.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 75',
@@ -1615,7 +1615,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Kowalczyk',
       phone: 500000078,
-      photo: 'photo_78.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 63',
@@ -1633,7 +1633,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kamiński',
       phone: 500000079,
-      photo: 'photo_79.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 37',
@@ -1651,7 +1651,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Nowak',
       phone: 500000080,
-      photo: 'photo_80.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 51',
@@ -1675,7 +1675,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Zieliński',
       phone: 500000081,
-      photo: 'photo_81.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 50',
@@ -1693,7 +1693,7 @@ export const users = [
       name: 'Maria',
       surname: 'Wiśniewski',
       phone: 500000082,
-      photo: 'photo_82.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 46',
@@ -1711,7 +1711,7 @@ export const users = [
       name: 'Marek',
       surname: 'Kowalski',
       phone: 500000083,
-      photo: 'photo_83.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 94',
@@ -1729,7 +1729,7 @@ export const users = [
       name: 'Maria',
       surname: 'Lewandowski',
       phone: 500000084,
-      photo: 'photo_84.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 36',
@@ -1747,7 +1747,7 @@ export const users = [
       name: 'Piotr',
       surname: 'Wójcik',
       phone: 500000085,
-      photo: 'photo_85.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 85',
@@ -1765,7 +1765,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kowalski',
       phone: 500000086,
-      photo: 'photo_86.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 38',
@@ -1783,7 +1783,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Kamiński',
       phone: 500000087,
-      photo: 'photo_87.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 76',
@@ -1801,7 +1801,7 @@ export const users = [
       name: 'Maria',
       surname: 'Kamiński',
       phone: 500000088,
-      photo: 'photo_88.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 4',
@@ -1819,7 +1819,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Kamiński',
       phone: 500000089,
-      photo: 'photo_89.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 9',
@@ -1837,7 +1837,7 @@ export const users = [
       name: 'Tomasz',
       surname: 'Lewandowski',
       phone: 500000090,
-      photo: 'photo_90.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 42',
@@ -1855,7 +1855,7 @@ export const users = [
       name: 'Maria',
       surname: 'Kamiński',
       phone: 500000091,
-      photo: 'photo_91.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 29',
@@ -1873,7 +1873,7 @@ export const users = [
       name: 'Anna',
       surname: 'Kamiński',
       phone: 500000092,
-      photo: 'photo_92.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 15',
@@ -1897,7 +1897,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Zieliński',
       phone: 500000093,
-      photo: 'photo_93.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 48',
@@ -1915,7 +1915,7 @@ export const users = [
       name: 'Marek',
       surname: 'Kowalczyk',
       phone: 500000094,
-      photo: 'photo_94.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 83',
@@ -1933,7 +1933,7 @@ export const users = [
       name: 'Agnieszka',
       surname: 'Zieliński',
       phone: 500000095,
-      photo: 'photo_95.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 64',
@@ -1951,7 +1951,7 @@ export const users = [
       name: 'Jan',
       surname: 'Lewandowski',
       phone: 500000096,
-      photo: 'photo_96.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 21',
@@ -1969,7 +1969,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Zieliński',
       phone: 500000097,
-      photo: 'photo_97.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 93',
@@ -1987,7 +1987,7 @@ export const users = [
       name: 'Krzysztof',
       surname: 'Kowalczyk',
       phone: 500000098,
-      photo: 'photo_98.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 83',
@@ -2005,7 +2005,7 @@ export const users = [
       name: 'Marek',
       surname: 'Wójcik',
       phone: 500000099,
-      photo: 'photo_99.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 68',
@@ -2029,7 +2029,7 @@ export const users = [
       name: 'Magdalena',
       surname: 'Kamiński',
       phone: 500000100,
-      photo: 'photo_100.jpg',
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 46',
