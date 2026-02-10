@@ -15,7 +15,7 @@ export class UniversityController {
     return await this.universityService.getUniversityMap();
   }
   @Get('roles')
-  public async geRoles(): Promise<string[]> {
+  public async getRoles(): Promise<string[]> {
     return await this.universityService.getRoles();
   }
 
@@ -26,15 +26,15 @@ export class UniversityController {
 
   @Post('specialty')
   public async createSpecialty(@Body() dto: CreateSpecialtyDto) {
-    return this.universityService.createSpecialty(dto);
+    return await this.universityService.createSpecialty(dto);
   }
 
   @Post('group')
   public async createGroup(@Body() dto: CreateGroupDto) {
-    return this.universityService.createGroup(dto);
+    return await this.universityService.createGroup(dto);
   }
   @Post('year')
   public async createYear(@Body() dto: CreateYearDto) {
-    return this.universityService.createYear(dto);
+    return await this.universityService.createYear(dto);
   }
 }

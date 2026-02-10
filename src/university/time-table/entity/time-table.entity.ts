@@ -1,21 +1,23 @@
 import { Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 import { ITimeTable } from '../model/time-table.model';
 import { User } from 'src/user/entity/user.entity';
-import { IsString } from 'class-validator';
+import { IsEnum, IsString } from 'class-validator';
 import { Group } from 'src/university/group/entity/group.entity';
 import { Year } from 'src/university/year/entity/year.entity';
 import { Specialty } from 'src/university/specialty/entity/specialty.entity';
 import { Subject } from 'src/university/subject/entity/subject.entity';
+import { Time } from '../enum/time';
+import { Day } from '../enum/day';
 
 @Entity()
 export class TimeTable implements ITimeTable {
   @PrimaryColumn()
-  @IsString()
-  hours: string;
+  @IsEnum(Time)
+  hours: Time;
 
   @PrimaryColumn()
-  @IsString()
-  days: string;
+  @IsEnum(Day)
+  days: Day;
 
   @PrimaryColumn()
   @IsString()

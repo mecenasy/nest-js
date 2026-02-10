@@ -9,5 +9,5 @@ export interface ISubject {
   teacher: IUser;
   groups: IGroup[];
   years: IYear[];
-  specialty: ISpecialty;
+  specialty: ISpecialty[];
 }

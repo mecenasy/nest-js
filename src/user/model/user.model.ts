@@ -10,4 +10,5 @@ export interface IUser {
   password: IHashedPassword;
   roles: IRole[];
   personId?: IPerson;
+  person?: IPerson;
 }

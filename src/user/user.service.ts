@@ -44,14 +44,14 @@ export class UserService {
     return user;
   }
 
-  public async findUserByEmail(email: string): Promise<User | null> {
+  public async findUserByEmail(email: string): Promise<User> {
     return this.userRepository
       .createQueryBuilder('user')
       .leftJoinAndSelect('user.password', 'password')
       .leftJoinAndSelect('user.person', 'person')
       .leftJoinAndSelect('user.roles', 'roles')
       .where('user.email = :email', { email })
-      .getOne();
+      .getOneOrFail();
 
     // this is worst solution
 
@@ -61,7 +61,7 @@ export class UserService {
     // });
   }
 
-  public async findUserById(id: string): Promise<User | null> {
+  public async findUserById(id: string): Promise<User> {
     return this.userRepository
       .createQueryBuilder('user')
       .leftJoinAndSelect('user.person', 'person')
@@ -69,7 +69,7 @@ export class UserService {
       .leftJoinAndSelect('user.student', 'student')
       .leftJoinAndSelect('person.address', 'address')
       .where('user.id = :id', { id })
-      .getOne();
+      .getOneOrFail();
 
     // return await this.userRepository.findOne({
     //   where: { id },

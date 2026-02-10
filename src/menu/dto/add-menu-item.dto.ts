@@ -42,7 +42,6 @@ export class AddMenuItemDto implements Omit<IMenu, 'role'> {
   shortName: string;
 
   @IsArray()
-  // @IsString({ each: true })
   @IsNotEmpty()
   @Transform(splitElementByComa)
   role: string[];

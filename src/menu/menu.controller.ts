@@ -18,6 +18,7 @@ import { Menu } from './entity/menu.entity';
 import { MenuResponse } from './response/menu.response';
 import { AssetsInterceptor } from 'src/interceptors/asset.interceptor';
 import { File } from 'src/interceptors/fie.interceptor';
+import { TimeTableInterceptor } from 'src/interceptors/time-table.interceptor';
 
 @Controller('menu')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -27,6 +28,7 @@ export class MenuController {
   constructor(private readonly menuService: MenuService) {}
 
   @Get()
+  @UseInterceptors(TimeTableInterceptor)
   public async getMenu(@UserRoleId() role: string): Promise<MenuResponse[]> {
     const menus = await this.menuService.getMenu(role);
     return menus.map((menu) => new MenuResponse({ ...menu, role: undefined }));

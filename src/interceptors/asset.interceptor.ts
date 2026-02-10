@@ -10,6 +10,7 @@ import { map, Observable } from 'rxjs';
 import { AppConfig } from 'src/configs/app.config';
 import { TypeConfigService } from 'src/configs/types.config.service';
 import { IS_ASSETS_PATH } from 'src/decorators/assets-path.decorator';
+import { User } from 'src/user/entity/user.entity';
 
 @Injectable()
 export class AssetsInterceptor implements NestInterceptor {
@@ -23,6 +24,7 @@ export class AssetsInterceptor implements NestInterceptor {
       IS_ASSETS_PATH,
       context.getHandler(),
     );
+
     return next.handle().pipe(
       map((data) => {
         const appUrl = this.configService.get<AppConfig>('app')?.appUrl;

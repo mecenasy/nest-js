@@ -61,6 +61,6 @@ import { UserQueryService } from './user-query.service';
     UserQueryService,
   ],
   controllers: [UserController, AuthController],
-  exports: [RoleService],
+  exports: [RoleService, UserService],
 })
 export class UserModule {}

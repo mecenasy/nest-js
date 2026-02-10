@@ -47,7 +47,7 @@ export class Subject implements ISubject {
   @JoinTable()
   @IsNotEmpty()
   @ManyToMany(() => Specialty, (specialty) => specialty.subjects)
-  specialty: Specialty;
+  specialty: Specialty[];
 
   @OneToMany(() => TimeTable, (timeTable) => timeTable.subject)
   timeTable: TimeTable[];
