@@ -19,6 +19,7 @@ import { FileModule } from './file/file.module';
 import { MessageModule } from './message/message.module';
 import { NotificationModule } from './notification/notification.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
+import { GradeModule } from './grade/grade.module';
 
 @Module({
   imports: [
@@ -56,6 +57,7 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
     FileModule,
     MessageModule,
     NotificationModule,
+    GradeModule,
   ],
   controllers: [AppController],
   providers: [

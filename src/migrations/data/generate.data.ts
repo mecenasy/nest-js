@@ -1,5 +1,3 @@
-import { IUser } from 'src/user/model/user.model';
-
 const groups = [
   'IPA',
   'IPB',
@@ -331,7 +329,7 @@ function generate200Subjects(teachers: string[]) {
   for (let i = 0; i < 200; i++) {
     const spec =
       mapping.specialties[
-      Math.floor(Math.random() * mapping.specialties.length)
+        Math.floor(Math.random() * mapping.specialties.length)
       ];
     const groupName =
       spec.groups[Math.floor(Math.random() * spec.groups.length)];
@@ -471,13 +469,13 @@ const subjects = generate200Subjects(teacherEmails);
 const schedule = generateCalendar(subjects);
 console.log(`Wygenerowano ${schedule.length} wpisów do kalendarza.`);
 
-const grages = generateGrades(users, subjects);
+const grades = generateGrades(users, subjects);
 
-console.log(`Wygenerowano łącznie ${grages.length} ocen.`);
-if (grages.length > 0) {
-  console.log('Przykładowa ocena:', grages[0]);
+console.log(`Wygenerowano łącznie ${grades.length} ocen.`);
+if (grades.length > 0) {
+  console.log('Przykładowa ocena:', grades[0]);
 } else {
   console.log('Nie znaleziono studentów pasujących do kryteriów przedmiotów!');
 }
 
-export { users, subjects, schedule, grages };
+export { users, subjects, schedule, grades };

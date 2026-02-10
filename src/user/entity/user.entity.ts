@@ -17,6 +17,7 @@ import { Role } from './role.entity';
 import { Student } from 'src/student/entity/student.entity';
 import { Message } from 'src/message/entity/message.entity';
 import { Subject } from 'src/university/subject/entity/subject.entity';
+import { Grade } from 'src/grade/entity/grade.entity';
 
 @Entity()
 export class User implements IUser {
@@ -81,4 +82,7 @@ export class User implements IUser {
 
   @OneToMany(() => Subject, (subject) => subject.teacher)
   timeTable: Subject[];
+
+  @OneToMany(() => Grade, (grade) => grade.teacher)
+  grades: Grade;
 }

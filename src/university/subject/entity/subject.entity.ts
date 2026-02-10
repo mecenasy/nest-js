@@ -14,6 +14,7 @@ import { ISubject } from '../model/subject.model';
 import { Group } from 'src/university/group/entity/group.entity';
 import { Year } from 'src/university/year/entity/year.entity';
 import { TimeTable } from 'src/university/time-table/entity/time-table.entity';
+import { Grade } from 'src/grade/entity/grade.entity';
 
 @Entity()
 export class Subject implements ISubject {
@@ -51,4 +52,7 @@ export class Subject implements ISubject {
 
   @OneToMany(() => TimeTable, (timeTable) => timeTable.subject)
   timeTable: TimeTable[];
+
+  @OneToMany(() => Grade, (grade) => grade.subject)
+  grades: Grade;
 }

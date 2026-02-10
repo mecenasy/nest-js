@@ -52,6 +52,19 @@ export class SubjectService {
       .getMany();
   }
 
+  async getSubjectsByTeacher(teacherId: string): Promise<Subject[]> {
+    return await this.dataSource
+      .getRepository(Subject)
+      .createQueryBuilder('subject')
+      .leftJoinAndSelect('subject.teacher', 'teacher')
+      .leftJoinAndSelect('teacher.person', 'person')
+      .leftJoinAndSelect('subject.groups', 'groups')
+      .leftJoinAndSelect('subject.years', 'years')
+      .leftJoinAndSelect('subject.specialty', 'specialty')
+      .where('teacher.id = :teacherId', { teacherId })
+      .getMany();
+  }
+
   async getSubjectById(id: string): Promise<Subject> {
     return await this.dataSource
       .getRepository(Subject)

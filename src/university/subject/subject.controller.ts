@@ -38,6 +38,15 @@ export class SubjectController {
     return subjects.map((subject) => new SubjectResponse(subject));
   }
 
+  @Get('teacher/:teacherId')
+  @Roles('admin', 'teacher')
+  public async getSubjectsByTeacher(
+    @Param('teacherId') teacherId: string,
+  ): Promise<SubjectResponse[]> {
+    const subjects = await this.subjectService.getSubjectsByTeacher(teacherId);
+    return subjects.map((subject) => new SubjectResponse(subject));
+  }
+
   @Get(':id')
   @Roles('admin')
   public async getSubjectById(
