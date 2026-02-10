@@ -62,5 +62,14 @@ const menus = [
     link: '/panel_menu',
     image: 'grade.svg',
   },
+  {
+    role: ['admin', 'teacher', 'student'],
+    name: 'Kalendarz wykładów',
+    position: 7,
+    shortName: 'Kalendarz',
+    menuSide: 'left',
+    link: '/time-table',
+    image: 'b107305f-c629-467d-ab68-c14519c7c125.svg',
+  },
 ];
 export default menus;

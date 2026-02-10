@@ -6,11 +6,15 @@ export class SubjectData1770403873731 implements MigrationInterface {
     await Promise.all(
       data.map(async (subject) => {
         await queryRunner.query(`
-      WITH inserted_subject as (
-        INSERT INTO "subject" (name, auditorium, "teacherId")
-        VALUES ('${subject.name}', '${subject.auditorium}','${subject.teacher}' )
-        RETURNING id,"teacherId" 
-      ),
+        WITH founded_user AS (
+          SELECT u.id, u.email from "user" u
+            WHERE u.email = '${subject.teacher}'
+        ),
+        inserted_subject as (
+          INSERT INTO "subject" (name, auditorium, "teacherId")
+          SELECT '${subject.name}', '${subject.auditorium}' ,id FROM founded_user
+          RETURNING id
+        ),
       inserted_year AS (
         INSERT INTO subject_years_year ("yearName", "subjectId")
         SELECT y, id FROM inserted_subject
@@ -20,7 +24,6 @@ export class SubjectData1770403873731 implements MigrationInterface {
       inserted_group AS (
         INSERT INTO subject_groups_group ("groupName", "subjectId")
         SELECT g, id FROM inserted_subject
-
         CROSS JOIN (VALUES ${subject.groups.map((r) => `('${r.name}')`).join(',')}) AS groups(g)
         RETURNING "subjectId"
       )

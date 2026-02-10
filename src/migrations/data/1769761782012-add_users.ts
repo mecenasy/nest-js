@@ -1,13 +1,49 @@
 export const users = [
   {
-    email: 'marek.wójcik0@example.com',
-    password: 'Pass738#',
+    email: 'irena@gmailcom',
+    password: 'Pass123##',
     role: 'teacher',
     person: {
-      name: 'Marek',
-      surname: 'Wójcik',
+      name: 'Irena',
+      surname: 'Gajda',
       phone: 500000000,
-      photo: 'photo_0.jpg',
+      photo: 'photo.jpg',
+    },
+    address: {
+      street: 'Ulica 64',
+      city: 'Poznań',
+      country: 'Polska',
+      number: '134',
+      zipCode: '42-665',
+    },
+  },
+  {
+    email: 'zuza@gmailcom',
+    password: 'Pass123##',
+    role: 'student',
+    person: {
+      name: 'Zuza',
+      surname: 'Gajda',
+      phone: 500000000,
+      photo: 'photo.jpg',
+    },
+    address: {
+      street: 'Ulica 64',
+      city: 'Poznań',
+      country: 'Polska',
+      number: '134',
+      zipCode: '42-665',
+    },
+  },
+  {
+    email: 'marcin@gmail.com',
+    password: 'Pass123#',
+    role: 'admin',
+    person: {
+      name: 'Marcin',
+      surname: 'Gajda',
+      phone: 500000000,
+      photo: 'photo.jpg',
     },
     address: {
       street: 'Ulica 64',
@@ -68,7 +104,7 @@ export const users = [
   {
     email: 'krzysztof.lewandowski3@example.com',
     password: 'Pass898#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Krzysztof',
       surname: 'Lewandowski',
@@ -86,7 +122,7 @@ export const users = [
   {
     email: 'anna.wiśniewski4@example.com',
     password: 'Pass669#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Anna',
       surname: 'Wiśniewski',
@@ -128,7 +164,7 @@ export const users = [
   {
     email: 'krzysztof.lewandowski6@example.com',
     password: 'Pass287#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Krzysztof',
       surname: 'Lewandowski',
@@ -146,7 +182,7 @@ export const users = [
   {
     email: 'marek.lewandowski7@example.com',
     password: 'Pass501#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Marek',
       surname: 'Lewandowski',
@@ -164,7 +200,7 @@ export const users = [
   {
     email: 'agnieszka.kowalczyk8@example.com',
     password: 'Pass312#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Agnieszka',
       surname: 'Kowalczyk',
@@ -224,7 +260,7 @@ export const users = [
   {
     email: 'magdalena.zieliński11@example.com',
     password: 'Pass332#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Magdalena',
       surname: 'Zieliński',
@@ -242,7 +278,7 @@ export const users = [
   {
     email: 'maria.wiśniewski12@example.com',
     password: 'Pass264#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Maria',
       surname: 'Wiśniewski',
@@ -332,7 +368,7 @@ export const users = [
   {
     email: 'katarzyna.kowalczyk16@example.com',
     password: 'Pass507#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Katarzyna',
       surname: 'Kowalczyk',
@@ -398,7 +434,7 @@ export const users = [
   {
     email: 'anna.zieliński19@example.com',
     password: 'Pass188#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Anna',
       surname: 'Zieliński',
@@ -416,7 +452,7 @@ export const users = [
   {
     email: 'katarzyna.kamiński20@example.com',
     password: 'Pass419#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Katarzyna',
       surname: 'Kamiński',
@@ -434,7 +470,7 @@ export const users = [
   {
     email: 'krzysztof.kowalczyk21@example.com',
     password: 'Pass391#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Krzysztof',
       surname: 'Kowalczyk',
@@ -452,7 +488,7 @@ export const users = [
   {
     email: 'katarzyna.kowalski22@example.com',
     password: 'Pass855#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Katarzyna',
       surname: 'Kowalski',
@@ -488,7 +524,7 @@ export const users = [
   {
     email: 'anna.lewandowski24@example.com',
     password: 'Pass331#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Anna',
       surname: 'Lewandowski',
@@ -542,7 +578,7 @@ export const users = [
   {
     email: 'jan.kowalski27@example.com',
     password: 'Pass311#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Jan',
       surname: 'Kowalski',
@@ -584,7 +620,7 @@ export const users = [
   {
     email: 'tomasz.kowalski29@example.com',
     password: 'Pass872#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Tomasz',
       surname: 'Kowalski',
@@ -626,7 +662,7 @@ export const users = [
   {
     email: 'tomasz.lewandowski31@example.com',
     password: 'Pass232#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Tomasz',
       surname: 'Lewandowski',
@@ -710,7 +746,7 @@ export const users = [
   {
     email: 'maria.kowalski35@example.com',
     password: 'Pass523#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Maria',
       surname: 'Kowalski',
@@ -770,7 +806,7 @@ export const users = [
   {
     email: 'marek.lewandowski38@example.com',
     password: 'Pass585#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Marek',
       surname: 'Lewandowski',
@@ -860,7 +896,7 @@ export const users = [
   {
     email: 'jan.kowalczyk42@example.com',
     password: 'Pass379#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Jan',
       surname: 'Kowalczyk',
@@ -938,7 +974,7 @@ export const users = [
   {
     email: 'maria.zieliński46@example.com',
     password: 'Pass694#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Maria',
       surname: 'Zieliński',
@@ -980,7 +1016,7 @@ export const users = [
   {
     email: 'katarzyna.zieliński48@example.com',
     password: 'Pass173#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Katarzyna',
       surname: 'Zieliński',
@@ -1040,7 +1076,7 @@ export const users = [
   {
     email: 'anna.kowalski51@example.com',
     password: 'Pass212#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Anna',
       surname: 'Kowalski',
@@ -1100,7 +1136,7 @@ export const users = [
   {
     email: 'marek.wójcik54@example.com',
     password: 'Pass162#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Marek',
       surname: 'Wójcik',
@@ -1118,7 +1154,7 @@ export const users = [
   {
     email: 'katarzyna.zieliński55@example.com',
     password: 'Pass520#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Katarzyna',
       surname: 'Zieliński',
@@ -1154,7 +1190,7 @@ export const users = [
   {
     email: 'piotr.nowak57@example.com',
     password: 'Pass388#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Piotr',
       surname: 'Nowak',
@@ -1190,7 +1226,7 @@ export const users = [
   {
     email: 'jan.kowalczyk59@example.com',
     password: 'Pass995#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Jan',
       surname: 'Kowalczyk',
@@ -1226,7 +1262,7 @@ export const users = [
   {
     email: 'katarzyna.wójcik61@example.com',
     password: 'Pass738#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Katarzyna',
       surname: 'Wójcik',
@@ -1244,7 +1280,7 @@ export const users = [
   {
     email: 'krzysztof.nowak62@example.com',
     password: 'Pass314#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Krzysztof',
       surname: 'Nowak',
@@ -1262,7 +1298,7 @@ export const users = [
   {
     email: 'jan.wiśniewski63@example.com',
     password: 'Pass792#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Jan',
       surname: 'Wiśniewski',
@@ -1280,7 +1316,7 @@ export const users = [
   {
     email: 'marek.lewandowski64@example.com',
     password: 'Pass293#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Marek',
       surname: 'Lewandowski',
@@ -1364,7 +1400,7 @@ export const users = [
   {
     email: 'agnieszka.wójcik68@example.com',
     password: 'Pass196#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Agnieszka',
       surname: 'Wójcik',
@@ -1406,7 +1442,7 @@ export const users = [
   {
     email: 'tomasz.kowalski70@example.com',
     password: 'Pass724#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Tomasz',
       surname: 'Kowalski',
@@ -1448,7 +1484,7 @@ export const users = [
   {
     email: 'agnieszka.wójcik72@example.com',
     password: 'Pass872#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Agnieszka',
       surname: 'Wójcik',
@@ -1514,7 +1550,7 @@ export const users = [
   {
     email: 'krzysztof.lewandowski75@example.com',
     password: 'Pass495#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Krzysztof',
       surname: 'Lewandowski',
@@ -1556,7 +1592,7 @@ export const users = [
   {
     email: 'agnieszka.lewandowski77@example.com',
     password: 'Pass690#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Agnieszka',
       surname: 'Lewandowski',
@@ -1574,7 +1610,7 @@ export const users = [
   {
     email: 'magdalena.kowalczyk78@example.com',
     password: 'Pass933#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Magdalena',
       surname: 'Kowalczyk',
@@ -1592,7 +1628,7 @@ export const users = [
   {
     email: 'tomasz.kamiński79@example.com',
     password: 'Pass932#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Tomasz',
       surname: 'Kamiński',
@@ -1634,7 +1670,7 @@ export const users = [
   {
     email: 'magdalena.zieliński81@example.com',
     password: 'Pass227#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Magdalena',
       surname: 'Zieliński',
@@ -1652,7 +1688,7 @@ export const users = [
   {
     email: 'maria.wiśniewski82@example.com',
     password: 'Pass218#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Maria',
       surname: 'Wiśniewski',
@@ -1670,7 +1706,7 @@ export const users = [
   {
     email: 'marek.kowalski83@example.com',
     password: 'Pass577#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Marek',
       surname: 'Kowalski',
@@ -1688,7 +1724,7 @@ export const users = [
   {
     email: 'maria.lewandowski84@example.com',
     password: 'Pass377#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Maria',
       surname: 'Lewandowski',
@@ -1706,7 +1742,7 @@ export const users = [
   {
     email: 'piotr.wójcik85@example.com',
     password: 'Pass615#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Piotr',
       surname: 'Wójcik',
@@ -1724,7 +1760,7 @@ export const users = [
   {
     email: 'tomasz.kowalski86@example.com',
     password: 'Pass293#',
-    role: 'admin',
+    role: 'teacher',
     person: {
       name: 'Tomasz',
       surname: 'Kowalski',
@@ -1760,7 +1796,7 @@ export const users = [
   {
     email: 'maria.kamiński88@example.com',
     password: 'Pass212#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Maria',
       surname: 'Kamiński',
@@ -1778,7 +1814,7 @@ export const users = [
   {
     email: 'krzysztof.kamiński89@example.com',
     password: 'Pass373#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Krzysztof',
       surname: 'Kamiński',
@@ -1856,7 +1892,7 @@ export const users = [
   {
     email: 'krzysztof.zieliński93@example.com',
     password: 'Pass855#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Krzysztof',
       surname: 'Zieliński',
@@ -1874,7 +1910,7 @@ export const users = [
   {
     email: 'marek.kowalczyk94@example.com',
     password: 'Pass362#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Marek',
       surname: 'Kowalczyk',
@@ -1910,7 +1946,7 @@ export const users = [
   {
     email: 'jan.lewandowski96@example.com',
     password: 'Pass437#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Jan',
       surname: 'Lewandowski',
@@ -1946,7 +1982,7 @@ export const users = [
   {
     email: 'krzysztof.kowalczyk98@example.com',
     password: 'Pass560#',
-    role: 'user',
+    role: 'teacher',
     person: {
       name: 'Krzysztof',
       surname: 'Kowalczyk',

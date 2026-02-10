@@ -1,4 +1,4 @@
-export const data = [
+const subjectsData = [
   {
     name: 'Wstęp do Algorytmy',
     auditorium: '231',
@@ -4000,3 +4000,71 @@ export const data = [
     ],
   },
 ];
+
+
+const days = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
+const hours = [
+  '7:00 - 8:00', '8:00 - 9:00', '9:00 - 10:00', '10:00 - 11:00',
+  '11:00 - 12:00', '12:00 - 13:00', '13:00 - 14:00', '14:00 - 15:00',
+  '15:00 - 16:00', '16:00 - 17:00', '17:00 - 18:00', '18:00 - 19:00', '19:00 - 20:00'
+];
+
+function generateCalendar(data) {
+  const calendar = [];
+
+  // Zbiory do szybkiego sprawdzania zajętości (klucz: "Dzień-Godzina-Kto")
+  const teacherBusy = new Set();
+  const groupYearBusy = new Set();
+
+  data.forEach(subjectObj => {
+    const hoursPerWeek = Math.floor(Math.random() * 6) + 1; // 1-4 godziny
+    const groupName = subjectObj.groups[0].name;
+    const yearValue = subjectObj.years[0].value;
+    const teacherEmail = subjectObj.teacher;
+
+    let allocatedHours = 0;
+    let attempts = 0;
+    const maxAttempts = 500; // Zabezpieczenie przed nieskończoną pętlą przy braku miejsc
+
+    while (allocatedHours < hoursPerWeek && attempts < maxAttempts) {
+      const randomDay = days[Math.floor(Math.random() * days.length)];
+      const randomHour = hours[Math.floor(Math.random() * hours.length)];
+
+      const teacherKey = `${randomDay}-${randomHour}-${teacherEmail}`;
+      const groupKey = `${randomDay}-${randomHour}-${groupName}-${yearValue}`;
+
+      // Sprawdzenie warunków unikalności
+      if (!teacherBusy.has(teacherKey) && !groupYearBusy.has(groupKey)) {
+
+        // Dodaj wpis do kalendarza
+        calendar.push({
+          hours: randomHour,
+          days: randomDay,
+          group: groupName,
+          year: yearValue,
+          specialty: subjectObj.specialty[0].name,
+          subject: subjectObj.name,
+          teacher: teacherEmail,
+          auditorium: subjectObj.auditorium
+        });
+
+        // Zablokuj termin
+        teacherBusy.add(teacherKey);
+        groupYearBusy.add(groupKey);
+        allocatedHours++;
+      }
+      attempts++;
+    }
+  });
+
+  return calendar;
+}
+
+const schedule = generateCalendar(subjectsData);
+console.log(`Wygenerowano ${schedule.length} wpisów do kalendarza.`);
+
+const fs = require('fs');
+const path = require('path');
+
+
+fs.writeFileSync('subjects.json', JSON.stringify(schedule, null, 2));

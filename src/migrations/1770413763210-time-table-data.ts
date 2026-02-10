@@ -6,9 +6,13 @@ export class TimeTableData1770413763210 implements MigrationInterface {
     await Promise.all(
       data.map(async (d) => {
         await queryRunner.query(`
+          WITH subject AS (
+            SELECT s.id, u.id as teacher_id FROM subject s INNER JOIN "user" u ON s."teacherId" = u.id
+            WHERE u.email = '${d.teacher}' AND s.name = '${d.subject}'
+          )
           INSERT INTO time_table (hours, days,"group", year, specialty,subject,teacher,auditorium) 
-          VALUES( '${d.hours}', '${d.days}', '${d.group}', '${d.year}', '${d.specialty}', '${d.subject}', '${d.teacher}', '${d.auditorium}');
-              `);
+          SELECT  '${d.hours}', '${d.days}', '${d.group}', '${d.year}', '${d.specialty}', id, "teacher_id", '${d.auditorium}' from subject
+        `);
       }),
     );
   }
