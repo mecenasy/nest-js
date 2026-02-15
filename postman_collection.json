@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "0fc9c551-7cbc-44ad-9424-275c40858766",
+      "id": "bc5d6e44-ee52-4324-83a7-2e2615607eab",
       "name": "App Controller get Hello",
       "request": {
         "name": "App Controller get Hello",
@@ -21,7 +21,7 @@
       },
       "response": [
         {
-          "id": "55f2b4a6-8a92-4e90-84de-02c1a9bb9671",
+          "id": "02741553-685a-4dd0-b527-d7d665d21076",
           "originalRequest": {
             "url": {
               "path": [
@@ -55,11 +55,11 @@
       }
     },
     {
-      "id": "fde77948-869c-4431-b7c6-ef961c59b1d0",
+      "id": "49e38a42-0fb8-4551-943e-3a22e6a275a9",
       "name": "tasks",
       "item": [
         {
-          "id": "be8b36aa-921e-47d5-bb75-8a66cba44b2c",
+          "id": "e8e55f02-6bc2-4e9c-abfd-d7bfe791e10b",
           "name": "Tasks Controller get Tasks",
           "request": {
             "name": "Tasks Controller get Tasks",
@@ -79,7 +79,7 @@
           },
           "response": [
             {
-              "id": "f5a5beeb-b8d3-44ef-afdb-62fe9016e0a2",
+              "id": "88add4de-91ab-4115-9787-7dcbbcb97151",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -113,7 +113,7 @@
           }
         },
         {
-          "id": "e9b01507-7940-4193-aa92-ea86393ca500",
+          "id": "875551d6-65be-4c4e-b6bb-37b900b9f343",
           "name": "Tasks Controller create Task",
           "request": {
             "name": "Tasks Controller create Task",
@@ -148,7 +148,7 @@
           },
           "response": [
             {
-              "id": "4dd28ab4-9f59-4ae1-a925-fda042c16805",
+              "id": "8048f6e7-a21a-480c-83b1-2f897dd5a7d6",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -190,11 +190,11 @@
           }
         },
         {
-          "id": "9a61e9c6-b7e4-4389-beba-7254779afabb",
+          "id": "3feb303e-1d71-45da-983e-0e3121337096",
           "name": "{id}",
           "item": [
             {
-              "id": "3c8c7de6-9998-4e26-b4a8-b78fdca007ad",
+              "id": "6a9235db-6daa-489d-8cd9-c88cb08e0b39",
               "name": "Tasks Controller get Task By Id",
               "request": {
                 "name": "Tasks Controller get Task By Id",
@@ -215,7 +215,7 @@
               },
               "response": [
                 {
-                  "id": "b1f0e6ff-b2b9-44a2-86ac-224d6806386b",
+                  "id": "835c2641-e1a1-4230-9f2f-6941f8d5cafe",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -250,7 +250,7 @@
               }
             },
             {
-              "id": "c6f63e2c-9155-4c56-b037-89b5182118ac",
+              "id": "cbea5eda-5418-4b39-aa8e-5b358a46357b",
               "name": "Tasks Controller update Task",
               "request": {
                 "name": "Tasks Controller update Task",
@@ -286,7 +286,7 @@
               },
               "response": [
                 {
-                  "id": "be8f0ba7-a328-4ed4-a6e3-615f2095e33f",
+                  "id": "479f89f9-a92e-47d4-a974-0c1c3dd1118b",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -329,7 +329,7 @@
               }
             },
             {
-              "id": "b792c9fa-5d67-49ad-8a16-9f69aab2847e",
+              "id": "7ed96295-56cf-4f4d-bd87-2402cafb82cf",
               "name": "Tasks Controller delete Task",
               "request": {
                 "name": "Tasks Controller delete Task",
@@ -350,7 +350,7 @@
               },
               "response": [
                 {
-                  "id": "96f94091-74c8-4bb9-8b40-9cce626732c1",
+                  "id": "fc6af1e9-f987-4391-b43b-d25368bcdc8b",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -385,11 +385,11 @@
               }
             },
             {
-              "id": "86d63200-c6dd-4f37-ad19-d855eb6a2bbe",
+              "id": "757ef7dc-4e7c-466b-be03-0340273b2727",
               "name": "labels",
               "item": [
                 {
-                  "id": "603138b3-21d7-4b4b-a9ff-cff34ef5ec3b",
+                  "id": "331e5cb0-5b25-4436-a364-a7de85d05885",
                   "name": "Tasks Controller add Labels To Task",
                   "request": {
                     "name": "Tasks Controller add Labels To Task",
@@ -426,7 +426,7 @@
                   },
                   "response": [
                     {
-                      "id": "c8b110b9-9d2b-45ac-98c8-2314511bcf48",
+                      "id": "cef175ea-68b7-4d2b-9af4-b38ca226d5b5",
                       "originalRequest": {
                         "url": {
                           "path": [
@@ -470,7 +470,7 @@
                   }
                 },
                 {
-                  "id": "de21fbc7-45c0-464e-bc81-d9f8fbf0df7f",
+                  "id": "20e32a29-0ac0-489b-ac32-1818618abec6",
                   "name": "Tasks Controller remove Labels",
                   "request": {
                     "name": "Tasks Controller remove Labels",
@@ -507,7 +507,7 @@
                   },
                   "response": [
                     {
-                      "id": "12858068-2114-428c-aad2-8f1082e276f5",
+                      "id": "fd2037f0-07fc-4dae-89f9-cbdf1b477cc0",
                       "originalRequest": {
                         "url": {
                           "path": [
@@ -554,7 +554,7 @@
               "event": []
             },
             {
-              "id": "9033ca41-c252-4521-805a-ff55694b7d0f",
+              "id": "9c21cce7-8523-4e50-a151-824945c82e5d",
               "name": "Tasks Controller update Task Status",
               "request": {
                 "name": "Tasks Controller update Task Status",
@@ -591,7 +591,7 @@
               },
               "response": [
                 {
-                  "id": "f8408866-6b50-4020-b106-894600295720",
+                  "id": "e757cf45-c795-4a7e-bc12-65947e9e2fdd",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -641,11 +641,11 @@
       "event": []
     },
     {
-      "id": "4b0d2852-fd0e-4f92-b1bc-7d257e5c8fce",
+      "id": "d66eec0d-efff-40a4-9be3-245ddb2642f4",
       "name": "user",
       "item": [
         {
-          "id": "c97addfd-11c9-406f-8b5e-b7474e6c6301",
+          "id": "681d1245-2960-4760-ab4f-554fb4b90148",
           "name": "User Controller register User",
           "request": {
             "name": "User Controller register User",
@@ -681,7 +681,7 @@
           },
           "response": [
             {
-              "id": "7d116cf8-b7de-4aa3-8888-e05ce966e107",
+              "id": "3d4f6ef3-7056-4b80-8d14-c296688cafa2",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -724,7 +724,7 @@
           }
         },
         {
-          "id": "11a059cc-d8cc-49e8-ad5f-8f0a93ff4dcb",
+          "id": "2d114c0b-5c49-4deb-8546-3f7f963f31f9",
           "name": "User Controller get Profile",
           "request": {
             "name": "User Controller get Profile",
@@ -745,7 +745,7 @@
           },
           "response": [
             {
-              "id": "e4afc6a4-20e8-42fa-89b5-003673db30e3",
+              "id": "23a777e1-c270-4fe8-b608-9ea5ede54c44",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -780,7 +780,7 @@
           }
         },
         {
-          "id": "c713ac69-c066-46c0-bbb7-666982705230",
+          "id": "19bbef45-254f-4413-9458-5ec872f47df3",
           "name": "User Controller get All Users",
           "request": {
             "name": "User Controller get All Users",
@@ -801,7 +801,7 @@
           },
           "response": [
             {
-              "id": "0f59eb88-6c64-47c8-ae10-26a4a91bf661",
+              "id": "9c5609d5-6e2e-4a8d-a49d-729caf17bd9a",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -836,7 +836,7 @@
           }
         },
         {
-          "id": "3a166582-f9c1-448c-87fd-03731f18f502",
+          "id": "c6ff5191-ae9c-4e13-a909-f3999072dfe4",
           "name": "User Controller get All Students",
           "request": {
             "name": "User Controller get All Students",
@@ -857,7 +857,7 @@
           },
           "response": [
             {
-              "id": "31c8c5a6-347c-46c4-b72f-4f6126a18c87",
+              "id": "16a9bf1b-f8b1-4d7a-9c40-5267e89d967d",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -892,7 +892,7 @@
           }
         },
         {
-          "id": "8fbc1166-b318-4f1f-9ddb-c36a706398be",
+          "id": "72da7d32-f1b8-44ce-b5f0-b3c6a65df34b",
           "name": "User Controller get All Teacher",
           "request": {
             "name": "User Controller get All Teacher",
@@ -913,7 +913,7 @@
           },
           "response": [
             {
-              "id": "1d6c15d6-fbc3-4436-99ee-4215c00ceb63",
+              "id": "036b1c12-940c-4ba0-bb7c-e4b5ac48c57e",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -948,7 +948,7 @@
           }
         },
         {
-          "id": "c717831b-bc34-46ad-afc0-1c032924b272",
+          "id": "c30ea94b-b634-4d45-99c3-cadbce5e5ff4",
           "name": "User Controller get Simple Users",
           "request": {
             "name": "User Controller get Simple Users",
@@ -978,7 +978,7 @@
           },
           "response": [
             {
-              "id": "eb8d2917-4e5c-40a0-8eda-f4f1fa0f7bbc",
+              "id": "d2876e7a-b942-4a9f-aec0-3c2a717857b1",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1025,11 +1025,11 @@
       "event": []
     },
     {
-      "id": "9ca4b8a0-7ba8-4673-aebd-3cd86841ddea",
+      "id": "20d1a3d1-62f9-4e65-8f87-294045982c09",
       "name": "auth",
       "item": [
         {
-          "id": "2d49446f-f7c2-489c-a899-e6ca654cee09",
+          "id": "8f25d4e6-089c-4b95-ba2f-5fad9535596e",
           "name": "Auth Controller login User",
           "request": {
             "name": "Auth Controller login User",
@@ -1065,7 +1065,7 @@
           },
           "response": [
             {
-              "id": "f6bd2c9e-53da-4cf7-b2c7-0e6f043a0b56",
+              "id": "299b3736-1a4a-4fb8-a474-d6f9b73b5b2c",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1108,7 +1108,7 @@
           }
         },
         {
-          "id": "a63de945-aa94-4a5e-b232-5d5ca0069a8b",
+          "id": "8afcb2c9-895b-42e0-b27e-d10c706eb5ad",
           "name": "Auth Controller logout",
           "request": {
             "name": "Auth Controller logout",
@@ -1129,7 +1129,7 @@
           },
           "response": [
             {
-              "id": "29e18706-a60a-40f4-a813-f2f50b5a2309",
+              "id": "1ce44c74-1cc7-4f79-a0c8-496d78da910b",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1164,7 +1164,7 @@
           }
         },
         {
-          "id": "9db5aa1a-1de9-4c68-a314-63f276947dbb",
+          "id": "058011d3-927c-412a-838f-0715c5ef0679",
           "name": "Auth Controller refresh Token",
           "request": {
             "name": "Auth Controller refresh Token",
@@ -1185,7 +1185,7 @@
           },
           "response": [
             {
-              "id": "1316bdea-6b31-4a6e-91a3-aa40121602a9",
+              "id": "ffb1e9c1-e562-4e28-8d61-13780d8b240f",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1223,11 +1223,11 @@
       "event": []
     },
     {
-      "id": "e0298ee5-cc37-4a08-b76e-3ae7601d0fb9",
+      "id": "682ab924-e381-4714-badb-3a930767179f",
       "name": "student",
       "item": [
         {
-          "id": "2b5f31a8-3b53-4e8a-b4e2-2ffa381f03f8",
+          "id": "2eaed95c-a346-4fe8-b8c2-5afcd1cbc96a",
           "name": "Student Controller create Student",
           "request": {
             "name": "Student Controller create Student",
@@ -1262,7 +1262,7 @@
           },
           "response": [
             {
-              "id": "df66392b-332d-483d-92a7-7c37ae3ca595",
+              "id": "6f1a3942-63cd-4595-9786-f82ac4c5c5a5",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1304,7 +1304,7 @@
           }
         },
         {
-          "id": "0c449b47-ccb5-4e06-8099-4e30558c1285",
+          "id": "506f196c-78cc-4f53-b533-8ca4bda4513f",
           "name": "Student Controller update Student",
           "request": {
             "name": "Student Controller update Student",
@@ -1339,7 +1339,7 @@
           },
           "response": [
             {
-              "id": "53711e26-16ef-45f0-ab48-5b7a86a39ab0",
+              "id": "a5b86c1a-d739-4981-bd81-939840b5b6bc",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1381,7 +1381,7 @@
           }
         },
         {
-          "id": "a8325d95-90ab-47c2-ac2a-3cda0d360854",
+          "id": "4f0a5549-2d67-4de0-ab4d-b6b1a1440152",
           "name": "Student Controller get Students",
           "request": {
             "name": "Student Controller get Students",
@@ -1401,7 +1401,7 @@
           },
           "response": [
             {
-              "id": "5cf8e746-6602-4552-af28-c99461bac562",
+              "id": "fe2cfc00-4d0a-449d-9d19-f029d57e1d6e",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1435,11 +1435,11 @@
           }
         },
         {
-          "id": "b0a1e85a-93b1-4740-90cb-a165d3d5ab86",
+          "id": "2819aea3-16ec-4a9b-9848-02e4e15136ce",
           "name": "{id}",
           "item": [
             {
-              "id": "401d3443-696f-4792-be96-16ed71c0e4d8",
+              "id": "e49e0cf1-f035-4926-8959-6d0949b0c6c0",
               "name": "Student Controller delete Student",
               "request": {
                 "name": "Student Controller delete Student",
@@ -1468,7 +1468,7 @@
               },
               "response": [
                 {
-                  "id": "63598826-9450-41ac-a308-032276bfe217",
+                  "id": "144dd6b2-0290-4e38-9df8-72505c21e6ed",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -1511,7 +1511,7 @@
               }
             },
             {
-              "id": "9f00a8ce-ae08-4f46-82f6-40a691a69c79",
+              "id": "8815e00e-5ec1-4055-8fe7-afb1ec44cb71",
               "name": "Student Controller get Student",
               "request": {
                 "name": "Student Controller get Student",
@@ -1540,7 +1540,7 @@
               },
               "response": [
                 {
-                  "id": "5499d586-913b-441d-88bf-2d023ff01bec",
+                  "id": "7a753320-bd2b-4cab-a7c5-c567ebbfbdff",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -1589,11 +1589,11 @@
       "event": []
     },
     {
-      "id": "aa182de6-3074-4fe1-9cc9-6ebd1f4cc130",
+      "id": "cfaf87ee-8214-4e24-8e8f-822514e09c03",
       "name": "university",
       "item": [
         {
-          "id": "14ea5bde-5434-4c05-981b-0b21b8c0b8b3",
+          "id": "9946be84-4987-4f9c-9498-52efc65bd17e",
           "name": "University Controller get University Map",
           "request": {
             "name": "University Controller get University Map",
@@ -1613,7 +1613,7 @@
           },
           "response": [
             {
-              "id": "e561a9c1-92d3-4ab7-8654-6de9896afc40",
+              "id": "713e2a84-8b88-4eb1-91b0-75f45c19b9fa",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1647,7 +1647,7 @@
           }
         },
         {
-          "id": "387c53a5-8b39-413e-aeb0-0a349d246be7",
+          "id": "0faf5919-eb16-45ab-8b17-0aca94b5d46c",
           "name": "University Controller get Roles",
           "request": {
             "name": "University Controller get Roles",
@@ -1668,7 +1668,7 @@
           },
           "response": [
             {
-              "id": "8283d191-ad35-4f5f-9787-06962123a13e",
+              "id": "5fe109e3-e2db-4560-afd0-1308f18f49a5",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1703,7 +1703,7 @@
           }
         },
         {
-          "id": "dd14e810-36b7-48c9-b25a-c99591a872e3",
+          "id": "5387f0c7-9c50-4fb8-b3a7-26e4c4525c27",
           "name": "University Controller create Direction",
           "request": {
             "name": "University Controller create Direction",
@@ -1739,7 +1739,7 @@
           },
           "response": [
             {
-              "id": "65aa14f4-b83a-4afe-96b6-90139a29a299",
+              "id": "505bca9a-e204-4f35-a041-a8c9a4256f64",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1782,7 +1782,7 @@
           }
         },
         {
-          "id": "cb152945-584a-4595-8888-90b3c72f3368",
+          "id": "d80ba034-5bbc-44af-aeb2-44cb164427d9",
           "name": "University Controller create Specialty",
           "request": {
             "name": "University Controller create Specialty",
@@ -1818,7 +1818,7 @@
           },
           "response": [
             {
-              "id": "6c4f2d4e-5ad8-4744-b688-8dce7085b144",
+              "id": "a42d1ce1-d986-404d-8a50-4a5f822b815c",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1861,7 +1861,7 @@
           }
         },
         {
-          "id": "3c4aae27-23ab-4553-960a-1507cf797055",
+          "id": "97cd777e-efb6-4913-ae7c-adef66abb9f6",
           "name": "University Controller create Group",
           "request": {
             "name": "University Controller create Group",
@@ -1897,7 +1897,7 @@
           },
           "response": [
             {
-              "id": "e0d6a84c-7c84-4907-baa6-1e16da6228e5",
+              "id": "6f43594a-b9bf-4cb7-b130-59f2ee740ff5",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1940,7 +1940,7 @@
           }
         },
         {
-          "id": "35741ab4-5961-48f5-b239-f7c47f36ec6b",
+          "id": "335cddee-5182-403b-8f15-77c4689d4f59",
           "name": "University Controller create Year",
           "request": {
             "name": "University Controller create Year",
@@ -1976,7 +1976,7 @@
           },
           "response": [
             {
-              "id": "9b163b86-5fca-4f79-9b3c-de46675a562a",
+              "id": "6613602e-7d17-4a93-86ef-588c98a1cf09",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -2019,11 +2019,11 @@
           }
         },
         {
-          "id": "c15f6f88-a90f-4bb2-8bdd-9598e78c4bc2",
+          "id": "611264be-112f-47a9-9351-e064a571b301",
           "name": "subject",
           "item": [
             {
-              "id": "bec41d45-c5b7-4ec8-b128-62bcd40678ca",
+              "id": "ec75e5af-923c-4910-8324-c7e3557fc829",
               "name": "Subject Controller create Subject",
               "request": {
                 "name": "Subject Controller create Subject",
@@ -2049,7 +2049,7 @@
                 "auth": null,
                 "body": {
                   "mode": "raw",
-                  "raw": "{}",
+                  "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -2059,7 +2059,7 @@
               },
               "response": [
                 {
-                  "id": "c0d6004d-4f79-4d4d-b582-293365b15c16",
+                  "id": "0aea1e30-68f7-47d0-b225-f7b1fb1eea92",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2075,7 +2075,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{}",
+                      "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -2102,7 +2102,7 @@
               }
             },
             {
-              "id": "c88a9585-7030-4930-8b9c-9ae079d078b0",
+              "id": "6d08e42c-ae19-44b8-9109-7d68a92d596d",
               "name": "Subject Controller get Subjects",
               "request": {
                 "name": "Subject Controller get Subjects",
@@ -2123,7 +2123,7 @@
               },
               "response": [
                 {
-                  "id": "bf8bdb3c-6287-4aa8-b8a0-74c77955b4b5",
+                  "id": "a4ae586f-2792-4f2e-892e-3078efa5742f",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2158,7 +2158,7 @@
               }
             },
             {
-              "id": "2cba2561-fcf4-456b-97bd-c5e18140f2a0",
+              "id": "73b79903-9a76-4a67-b752-e808bb51d6ca",
               "name": "Subject Controller get Subjects By Teacher",
               "request": {
                 "name": "Subject Controller get Subjects By Teacher",
@@ -2189,7 +2189,7 @@
               },
               "response": [
                 {
-                  "id": "0d769e72-7567-431a-aa47-4d627a4bc0d7",
+                  "id": "83ccc942-15f3-4772-9e61-81bfb6e7b455",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2234,11 +2234,11 @@
               }
             },
             {
-              "id": "9c18c423-d3c2-4999-9167-2691774c8229",
+              "id": "23a98773-a75c-4894-a44c-e289d5f86715",
               "name": "{id}",
               "item": [
                 {
-                  "id": "feccdb54-9ad0-40f6-ace7-6b228e1d3ff7",
+                  "id": "96d647ed-3aa2-4695-b219-c4d40f43ab48",
                   "name": "Subject Controller get Subject By Id",
                   "request": {
                     "name": "Subject Controller get Subject By Id",
@@ -2268,7 +2268,7 @@
                   },
                   "response": [
                     {
-                      "id": "72adc952-630d-42f1-aede-e24e8b642f45",
+                      "id": "e92ebabd-ab0c-43c0-91c9-0ee20528dec8",
                       "originalRequest": {
                         "url": {
                           "path": [
@@ -2312,7 +2312,7 @@
                   }
                 },
                 {
-                  "id": "6273ae42-dbd2-4d2c-8947-848520e6252f",
+                  "id": "dbff054f-bcd3-43d3-913e-6e595fd8e11c",
                   "name": "Subject Controller update Subject",
                   "request": {
                     "name": "Subject Controller update Subject",
@@ -2357,7 +2357,7 @@
                   },
                   "response": [
                     {
-                      "id": "66633e73-a147-4830-8fc9-85b5d41f215b",
+                      "id": "40db3ec2-dd3a-46b9-8fe4-cbc2ef93ea42",
                       "originalRequest": {
                         "url": {
                           "path": [
@@ -2407,6 +2407,80 @@
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   }
+                },
+                {
+                  "id": "eef1ef97-f70f-4c53-833e-4d6b27b3fd0e",
+                  "name": "Subject Controller remove Subject",
+                  "request": {
+                    "name": "Subject Controller remove Subject",
+                    "description": {},
+                    "url": {
+                      "path": [
+                        "university",
+                        "subject",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "disabled": false,
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "id",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "method": "DELETE",
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "54c524ef-4497-47ff-8f52-8eace4ecc0a4",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "university",
+                            "subject",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "type": "any",
+                              "value": "<string>",
+                              "key": "id",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "body": {}
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "text/plain"
+                        }
+                      ],
+                      "body": "",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
                 }
               ],
               "event": []
@@ -2415,11 +2489,11 @@
           "event": []
         },
         {
-          "id": "35ef9927-1c35-4313-bc3e-ab46d437c241",
+          "id": "e27043ad-99a4-4680-b544-ccf10485de54",
           "name": "time-table",
           "item": [
             {
-              "id": "211e9c37-c90f-4bb2-8bc7-bffe5ea306a7",
+              "id": "b7a953ba-e94f-4766-bd34-58e91d909142",
               "name": "Time Table Controller add Subject To Time Table",
               "request": {
                 "name": "Time Table Controller add Subject To Time Table",
@@ -2455,7 +2529,7 @@
               },
               "response": [
                 {
-                  "id": "89556a30-220f-48b4-8d7d-c336f129cbe3",
+                  "id": "2d0a62fc-0d21-4b29-96bd-93959dfe5919",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2498,7 +2572,7 @@
               }
             },
             {
-              "id": "17a10503-58f5-4bc3-90d6-e57a06639239",
+              "id": "ead17f87-7f3e-4412-ba19-acf6039c4d9c",
               "name": "Time Table Controller remove Subject From Time Table",
               "request": {
                 "name": "Time Table Controller remove Subject From Time Table",
@@ -2534,7 +2608,7 @@
               },
               "response": [
                 {
-                  "id": "e1d2605a-d419-44ff-b077-6118af88df03",
+                  "id": "a6cbf51e-d23d-49b1-b49a-4116a65a1f91",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2577,7 +2651,7 @@
               }
             },
             {
-              "id": "ef4df7a5-a6c4-4936-a7a0-af9211d94c5d",
+              "id": "bcfb3c16-8fdf-4bc8-bb05-0ab10f9d22e1",
               "name": "Time Table Controller move Subject In Time Table",
               "request": {
                 "name": "Time Table Controller move Subject In Time Table",
@@ -2613,7 +2687,7 @@
               },
               "response": [
                 {
-                  "id": "5164f472-0c04-43c2-bb59-54cf13ef1700",
+                  "id": "b3534445-e955-44f4-9c42-b2834f42a2c7",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2656,7 +2730,7 @@
               }
             },
             {
-              "id": "2c8b5f27-32dd-486a-ab8b-755d0e24fd79",
+              "id": "03dbae08-4873-43b9-adc8-c7394d07dea4",
               "name": "Time Table Controller get Time Table By Year",
               "request": {
                 "name": "Time Table Controller get Time Table By Year",
@@ -2687,7 +2761,7 @@
               },
               "response": [
                 {
-                  "id": "6e9bd64d-120e-4568-ac59-79e66419b03c",
+                  "id": "d0449890-31fd-4535-b2fc-68b55fc31edc",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2732,7 +2806,7 @@
               }
             },
             {
-              "id": "03b8700e-47c9-4fdb-b14d-5ed2337ef386",
+              "id": "a71eb3bb-2975-4b4c-b2f7-2873dcc398bc",
               "name": "Time Table Controller get Time Table By Group",
               "request": {
                 "name": "Time Table Controller get Time Table By Group",
@@ -2757,7 +2831,7 @@
               },
               "response": [
                 {
-                  "id": "8d72bdb9-75c5-405f-ba52-5c654af392fc",
+                  "id": "9bfb0dbd-202a-4959-ba72-afca0dd103ba",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2796,7 +2870,7 @@
               }
             },
             {
-              "id": "b2a5c14c-8d9d-4c49-be35-924991805b34",
+              "id": "390c03cb-eef3-4ede-b091-6ae38ca80a91",
               "name": "Time Table Controller get Calendar",
               "request": {
                 "name": "Time Table Controller get Calendar",
@@ -2818,7 +2892,7 @@
               },
               "response": [
                 {
-                  "id": "e94d6497-9bbe-4cd2-b2fe-f62af1025733",
+                  "id": "fd780ed9-1d16-44da-8769-dab9740e28d5",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2854,7 +2928,7 @@
               }
             },
             {
-              "id": "ae133f01-5d84-4117-9da4-6e28c88e3c0c",
+              "id": "16d888d6-26af-43aa-b689-046279baa555",
               "name": "Time Table Controller get Time Table By Specialty",
               "request": {
                 "name": "Time Table Controller get Time Table By Specialty",
@@ -2885,7 +2959,7 @@
               },
               "response": [
                 {
-                  "id": "bdea8485-4c5a-4167-a1ad-519cf9ae132c",
+                  "id": "6abc8baf-6e3c-4189-8589-79200862dd44",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -2930,7 +3004,7 @@
               }
             },
             {
-              "id": "5150d198-3bfa-422f-a2d1-e41621d4b995",
+              "id": "11a855b4-a249-4ad2-bbd0-b8d91db8a008",
               "name": "Time Table Controller get Time Table By Teacher",
               "request": {
                 "name": "Time Table Controller get Time Table By Teacher",
@@ -2961,7 +3035,7 @@
               },
               "response": [
                 {
-                  "id": "66cc90fb-787b-461a-9fb3-f0aea1a0d434",
+                  "id": "ab83ec77-2a86-4b45-ac60-4bd07d354410",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -3012,11 +3086,11 @@
       "event": []
     },
     {
-      "id": "b3efa3aa-ea97-490c-a70f-930481b0611d",
+      "id": "59100aaf-c165-40f1-85bd-a2ad13a5ce4a",
       "name": "menu",
       "item": [
         {
-          "id": "4e250c72-3088-4dfb-aeb9-4ab12dcdecf4",
+          "id": "3e8bddbd-859b-490c-b7a9-9a8708f39e9a",
           "name": "Menu Controller get Menu",
           "request": {
             "name": "Menu Controller get Menu",
@@ -3036,7 +3110,7 @@
           },
           "response": [
             {
-              "id": "3465d2aa-4929-4d51-a246-3a8ae07b0349",
+              "id": "e05eef6b-d043-4cc8-bfd1-164716aa8e10",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3070,7 +3144,7 @@
           }
         },
         {
-          "id": "2c5357a5-86cd-4a53-8602-1b3920819336",
+          "id": "00741614-17f4-4938-b98b-c89c7edfe43a",
           "name": "Menu Controller add Menu Item",
           "request": {
             "name": "Menu Controller add Menu Item",
@@ -3105,7 +3179,7 @@
           },
           "response": [
             {
-              "id": "9f632a69-d713-411f-92a4-7ab0341352ca",
+              "id": "aa8f4d97-8922-45fe-837c-805068918d0a",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3147,7 +3221,7 @@
           }
         },
         {
-          "id": "cde50aed-a35c-4ee5-9449-2bfac828857e",
+          "id": "e275203c-7ec8-4c95-9cf3-2db32de2ff2e",
           "name": "Menu Controller delete Menu",
           "request": {
             "name": "Menu Controller delete Menu",
@@ -3176,7 +3250,7 @@
           },
           "response": [
             {
-              "id": "b19e9cc7-1a6e-4b2d-b46c-d8853a1aafb4",
+              "id": "ff19b5a9-3253-43be-b719-1da4df5d7edb",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3219,7 +3293,7 @@
           }
         },
         {
-          "id": "ffd68ad2-7531-4687-a511-5c846fa86c29",
+          "id": "617395d0-f99e-4903-bc54-f29640e2005c",
           "name": "Menu Controller get All Menus",
           "request": {
             "name": "Menu Controller get All Menus",
@@ -3240,7 +3314,7 @@
           },
           "response": [
             {
-              "id": "47f97898-2cd5-4455-9d07-d4e5f569a047",
+              "id": "deb4379f-4310-42b3-847d-7504cc47884a",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3278,11 +3352,11 @@
       "event": []
     },
     {
-      "id": "d4af802a-366d-4de0-b7fb-a4c568a2edaa",
+      "id": "5d22ff75-1c50-4626-9fda-6baa8cfd5d36",
       "name": "file/{userId}",
       "item": [
         {
-          "id": "b64e36d7-7272-4200-9f81-d709b45ee745",
+          "id": "a78c7ec0-f7c1-4c4c-b439-086c28d1b67e",
           "name": "File Controller upload File",
           "request": {
             "name": "File Controller upload File",
@@ -3311,7 +3385,7 @@
           },
           "response": [
             {
-              "id": "1db7e5d2-d03a-4e38-bc5a-376103de8e91",
+              "id": "27eb16c4-f4a0-4d5a-80e7-5278954a9445",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3354,7 +3428,7 @@
           }
         },
         {
-          "id": "f499cef3-8ccf-47eb-950e-e19a0eed585d",
+          "id": "93bc5f85-f0c9-478b-a276-b1a5a5727593",
           "name": "File Controller update File",
           "request": {
             "name": "File Controller update File",
@@ -3383,7 +3457,7 @@
           },
           "response": [
             {
-              "id": "20159ff8-14e2-4a56-b1de-5d80c29293ec",
+              "id": "da6cf18b-b7c0-4636-a941-ee7394cbba68",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3429,11 +3503,11 @@
       "event": []
     },
     {
-      "id": "117da977-c64f-4781-84d0-1b5b7871e87f",
+      "id": "edc3d011-0a2e-42d1-b72f-2acbe2ce1065",
       "name": "message",
       "item": [
         {
-          "id": "6c150419-f217-4d8f-8e46-abda232a56c7",
+          "id": "6c751269-3298-4662-a4bb-6cebee0083cc",
           "name": "Message Controller send Message",
           "request": {
             "name": "Message Controller send Message",
@@ -3469,7 +3543,7 @@
           },
           "response": [
             {
-              "id": "6a178f8d-a56c-40a3-8453-4cdce8aeb25d",
+              "id": "dde44b90-45d8-452d-b21d-ddf7661e41c3",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3512,7 +3586,7 @@
           }
         },
         {
-          "id": "8e062deb-62f6-4b5a-9d3b-011c152992b1",
+          "id": "9d0ee5d5-3e73-4a45-99b8-c0a89c32a303",
           "name": "Message Controller get All Message",
           "request": {
             "name": "Message Controller get All Message",
@@ -3533,7 +3607,7 @@
           },
           "response": [
             {
-              "id": "9bc7a432-1632-40cd-bfdd-4392dd442c67",
+              "id": "51acbe6a-f152-4bb5-9f3d-eb485cacd176",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3568,15 +3642,15 @@
           }
         },
         {
-          "id": "71dc0d6c-021a-4cfa-bdfe-a26096278f3b",
-          "name": "Message Controller set Readed Message",
+          "id": "87f3477b-cd83-4692-9dc4-1a1a2e849aad",
+          "name": "Message Controller set Read Message",
           "request": {
-            "name": "Message Controller set Readed Message",
+            "name": "Message Controller set Read Message",
             "description": {},
             "url": {
               "path": [
                 "message",
-                "readed",
+                "read",
                 ":messageId"
               ],
               "host": [
@@ -3598,12 +3672,12 @@
           },
           "response": [
             {
-              "id": "ccb28375-6319-44e9-98f2-bb1c091891b0",
+              "id": "8b202504-d3ea-4cc7-94f4-51b7848856b9",
               "originalRequest": {
                 "url": {
                   "path": [
                     "message",
-                    "readed",
+                    "read",
                     ":messageId"
                   ],
                   "host": [
@@ -3642,7 +3716,7 @@
           }
         },
         {
-          "id": "79d68404-d854-44b9-bf62-c9e947e9f0e8",
+          "id": "e9cf868f-c90c-41c2-b12b-cc6c6fbb5933",
           "name": "Message Controller get Message By Id",
           "request": {
             "name": "Message Controller get Message By Id",
@@ -3671,7 +3745,7 @@
           },
           "response": [
             {
-              "id": "64cd2b6b-7263-48ce-84b5-b2cfd484f505",
+              "id": "2142e314-8287-45c1-b67a-846808f418ab",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3717,11 +3791,11 @@
       "event": []
     },
     {
-      "id": "b73f5cb4-afbd-4d6d-acb9-897dc70e9ed6",
+      "id": "f54860ea-f393-4844-b386-33974b6c0842",
       "name": "notification",
       "item": [
         {
-          "id": "59dbab7c-538f-44a5-81f9-904e8a177b89",
+          "id": "f9aa0d60-2abe-47ab-87c7-2395b2378343",
           "name": "Notification Controller get Notifications",
           "request": {
             "name": "Notification Controller get Notifications",
@@ -3741,7 +3815,7 @@
           },
           "response": [
             {
-              "id": "0b03aa79-fc58-4cc4-849d-667d364f5380",
+              "id": "45335965-94bc-4310-8e22-d024023daae7",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3775,7 +3849,7 @@
           }
         },
         {
-          "id": "1aa6b03c-3431-4964-923e-2ad4f2745d7b",
+          "id": "20229125-706f-450b-b442-040b3a7a702a",
           "name": "Notification Controller stream",
           "request": {
             "name": "Notification Controller stream",
@@ -3805,7 +3879,7 @@
           },
           "response": [
             {
-              "id": "b6c85182-5281-4ea8-a4a6-708d6408f833",
+              "id": "4561b3ce-076f-48a3-9d65-a95019af3d43",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3852,11 +3926,11 @@
       "event": []
     },
     {
-      "id": "07514001-95cd-4161-8c0a-e34087d0ce26",
+      "id": "16e72dce-65c1-4b42-8705-8ff91b210389",
       "name": "grade",
       "item": [
         {
-          "id": "b9b7eabf-b1ff-4867-92a9-daff49afc9f9",
+          "id": "39fa7bb6-cae4-45cb-af6f-36879d26cc19",
           "name": "Grade Controller create",
           "request": {
             "name": "Grade Controller create",
@@ -3881,7 +3955,7 @@
             "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{}",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
               "options": {
                 "raw": {
                   "language": "json"
@@ -3891,7 +3965,7 @@
           },
           "response": [
             {
-              "id": "cf747991-9e03-4ce0-8ce3-14457eff308a",
+              "id": "40c7bae9-49f3-4df2-91c3-dc805fe8bfeb",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3906,7 +3980,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{}",
+                  "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -3933,7 +4007,7 @@
           }
         },
         {
-          "id": "23a40483-044d-4cfb-abfc-5f9c3477b2a0",
+          "id": "6ba73f0f-bdff-4521-928b-13e76e1eff83",
           "name": "Grade Controller find All",
           "request": {
             "name": "Grade Controller find All",
@@ -3953,7 +4027,7 @@
           },
           "response": [
             {
-              "id": "e1f37fac-dfd7-4f5d-b2c1-00e3fd5e5eab",
+              "id": "556398e7-0802-469a-ab86-bfb04961db1b",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3987,11 +4061,88 @@
           }
         },
         {
-          "id": "96308f1b-c3c8-4bf0-a361-f369e1cb92da",
+          "id": "887d4157-e83a-4e0f-92e7-122f433f5059",
+          "name": "Grade Controller update",
+          "request": {
+            "name": "Grade Controller update",
+            "description": {},
+            "url": {
+              "path": [
+                "grade"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8cafbc85-1c50-4436-8040-c53ff16de884",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "grade"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e926a30a-9403-412b-869c-8533668a8ad8",
           "name": "{id}",
           "item": [
             {
-              "id": "217116cc-8ef0-4295-9fca-4618ec118090",
+              "id": "312167da-0d10-4d18-a856-0a2326c986ac",
               "name": "Grade Controller find One",
               "request": {
                 "name": "Grade Controller find One",
@@ -4020,7 +4171,7 @@
               },
               "response": [
                 {
-                  "id": "5be616e0-1d01-444a-8dbb-fc4abb5d1c8c",
+                  "id": "8c6e19ab-f5c3-4d56-9fb4-ea1d0a7a859c",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -4063,102 +4214,7 @@
               }
             },
             {
-              "id": "eb4108af-86c0-409f-b412-747dc2b22882",
-              "name": "Grade Controller update",
-              "request": {
-                "name": "Grade Controller update",
-                "description": {},
-                "url": {
-                  "path": [
-                    "grade",
-                    ":id"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "id",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PATCH",
-                "auth": null,
-                "body": {
-                  "mode": "raw",
-                  "raw": "{}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [
-                {
-                  "id": "00f116ea-f557-494a-8e26-8281e84328a7",
-                  "originalRequest": {
-                    "url": {
-                      "path": [
-                        "grade",
-                        ":id"
-                      ],
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "query": [],
-                      "variable": [
-                        {
-                          "disabled": false,
-                          "type": "any",
-                          "value": "<string>",
-                          "key": "id",
-                          "description": "(Required) "
-                        }
-                      ]
-                    },
-                    "method": "PATCH",
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{}",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    }
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "header": [
-                    {
-                      "key": "Content-Type",
-                      "value": "text/plain"
-                    }
-                  ],
-                  "body": "",
-                  "cookie": [],
-                  "_postman_previewlanguage": "text"
-                }
-              ],
-              "event": [],
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              }
-            },
-            {
-              "id": "ab4a3177-3403-41a9-8cff-57610a67b6a8",
+              "id": "9a9661eb-bd1d-4fa8-8e59-d210701c7796",
               "name": "Grade Controller remove",
               "request": {
                 "name": "Grade Controller remove",
@@ -4187,7 +4243,7 @@
               },
               "response": [
                 {
-                  "id": "64c16614-25ec-434f-b83d-86f82edd3224",
+                  "id": "42cae4df-aabf-4dde-9f0e-6b491fae92ac",
                   "originalRequest": {
                     "url": {
                       "path": [
@@ -4211,8 +4267,8 @@
                     "method": "DELETE",
                     "body": {}
                   },
-                  "status": "OK",
-                  "code": 200,
+                  "status": "No Content",
+                  "code": 204,
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4233,7 +4289,7 @@
           "event": []
         },
         {
-          "id": "1851b597-49c7-44d9-8d41-be6a0bfdc8ad",
+          "id": "6aad47b5-b8a3-48eb-8257-fcdf63d66e25",
           "name": "Grade Controller find By Student",
           "request": {
             "name": "Grade Controller find By Student",
@@ -4263,7 +4319,7 @@
           },
           "response": [
             {
-              "id": "a6b683a9-ce56-445c-9896-4fe3b2cf3943",
+              "id": "b5108427-2fde-4137-b8eb-29d22bfe0d00",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -4307,7 +4363,7 @@
           }
         },
         {
-          "id": "3ffff8f6-b45f-44f8-a55e-45b67a63b58c",
+          "id": "d1236f56-ffa0-490c-aa5f-ab3900f2854a",
           "name": "Grade Controller find By Teacher",
           "request": {
             "name": "Grade Controller find By Teacher",
@@ -4337,7 +4393,7 @@
           },
           "response": [
             {
-              "id": "5bfe5536-f401-4675-a8cf-c7281c8879ac",
+              "id": "c9f6c31f-95a0-4a27-b2fd-f7d505c1c466",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -4379,6 +4435,64 @@
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           }
+        },
+        {
+          "id": "8f74ee4f-2f6a-4951-8007-6d07a6b22ca0",
+          "name": "Grade Controller find Students Without Grades",
+          "request": {
+            "name": "Grade Controller find Students Without Grades",
+            "description": {},
+            "url": {
+              "path": [
+                "grade",
+                "students",
+                "without-grades"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfec3f93-fd81-4cdb-959a-9d859a9e1f34",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "grade",
+                    "students",
+                    "without-grades"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
         }
       ],
       "event": []
@@ -4393,7 +4507,7 @@
     }
   ],
   "info": {
-    "_postman_id": "ae8226a4-91dd-4d87-8ef3-220833a1f489",
+    "_postman_id": "d36720ff-5494-4bba-b6cd-3e060be58ab7",
     "name": "nest js",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

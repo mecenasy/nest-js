@@ -60,17 +60,17 @@ export class MessageController {
       messages: messages.map((message) => ({
         id: message.id,
         title: message.title,
-        isReaded: message.isReaded,
+        isRead: message.isRead,
       })),
       count,
     });
   }
-  @Put('readed/:messageId')
-  public async setReadedMessage(
+  @Put('read/:messageId')
+  public async setReadMessage(
     @CurrentUserId() userId: string,
     @Param('messageId') messageId: string,
   ): Promise<void> {
-    await this.messageService.setReadedMessage(userId, messageId);
+    await this.messageService.setReadMessage(userId, messageId);
   }
 
   @Get(':id')
@@ -96,8 +96,8 @@ export class MessageController {
           path: file.name,
           name: file.originalName,
         })),
-        isReaded: userId === message.from.id ? true : message.isReaded,
-        // isReaded: message.isReaded,
+        isRead: userId === message.from.id ? true : message.isRead,
+        // isRead: message.isRead,
       });
     };
 }

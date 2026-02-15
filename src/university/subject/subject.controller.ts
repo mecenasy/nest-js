@@ -8,6 +8,9 @@ import {
   UseInterceptors,
   ClassSerializerInterceptor,
   SerializeOptions,
+  Delete,
+  HttpStatus,
+  HttpCode,
 } from '@nestjs/common';
 import { CreateSubjectDto } from './dto/create-subject.dto';
 import { UpdateSubjectDto } from './dto/update-subject.dto';
@@ -24,11 +27,15 @@ export class SubjectController {
   @Post()
   @Roles('admin')
   public async createSubject(
-    @Body() createSubjectDto: CreateSubjectDto,
-  ): Promise<SubjectResponse> {
-    return new SubjectResponse(
-      await this.subjectService.createSubject(createSubjectDto),
+    @Body() createSubjectDto: CreateSubjectDto[],
+  ): Promise<SubjectResponse[]> {
+    const data = await Promise.all(
+      createSubjectDto.map((subject) =>
+        this.subjectService.createSubject(subject),
+      ),
     );
+
+    return data.map((subject) => new SubjectResponse(subject));
   }
 
   @Get()
@@ -64,5 +71,12 @@ export class SubjectController {
     return new SubjectResponse(
       await this.subjectService.updateSubject(id, updateSubjectDto),
     );
+  }
+
+  @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @Roles('admin')
+  public async removeSubject(@Param('id') id: string) {
+    await this.subjectService.removeSubject(id);
   }
 }

@@ -21,7 +21,7 @@ export class Subject implements ISubject {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ unique: true })
   @IsString()
   @IsNotEmpty()
   name: string;

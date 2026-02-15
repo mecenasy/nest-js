@@ -59,5 +59,5 @@ export class Message implements IMessage {
 
   @Column({ default: false })
   @IsBoolean()
-  isReaded: boolean;
+  isRead: boolean;
 }

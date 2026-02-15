@@ -43,5 +43,5 @@ export class MessageRes {
 
   @Expose()
   @IsBoolean()
-  isReaded: boolean;
+  isRead: boolean;
 }

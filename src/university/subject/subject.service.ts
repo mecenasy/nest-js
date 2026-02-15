@@ -21,7 +21,7 @@ export class SubjectService {
   async createSubject(createSubjectDto: CreateSubjectDto): Promise<Subject> {
     const { teacher, groups, years, specialties, ...rest } = createSubjectDto;
 
-    const [foundUser, foundYears, foundSpecialty, foundGroups] =
+    const [foundUser, foundGroups, foundYears, foundSpecialty] =
       await Promise.all([
         this.getUser(teacher).getOneOrFail(),
         this.getGroups(groups).getMany(),
@@ -77,6 +77,14 @@ export class SubjectService {
       .where('subject.id = :id', { id })
       .getOneOrFail();
   }
+  async removeSubject(id: string): Promise<void> {
+    await this.dataSource
+      .getRepository(Subject)
+      .createQueryBuilder('subject')
+      .where('subject.id = :id', { id })
+      .delete()
+      .execute();
+  }
 
   async updateSubject(
     id: string,
@@ -122,6 +130,7 @@ export class SubjectService {
       .where('user.id = :id', { id: teacher })
       .andWhere('roles.name = :role', { role: 'teacher' });
   }
+
   private getYears(years: string[]): SelectQueryBuilder<Year> {
     return this.dataSource
       .getRepository(Year)
@@ -129,13 +138,15 @@ export class SubjectService {
       .select()
       .where('year.name IN (:...ids)', { ids: years });
   }
-  private getSpecialties(specialties: string): SelectQueryBuilder<Specialty> {
+
+  private getSpecialties(specialties: string[]): SelectQueryBuilder<Specialty> {
     return this.dataSource
       .getRepository(Specialty)
       .createQueryBuilder('specialty')
       .select()
       .where('specialty.name IN (:...id)', { id: specialties });
   }
+
   private getGroups(groups: string[]): SelectQueryBuilder<Group> {
     return this.dataSource
       .getRepository(Group)

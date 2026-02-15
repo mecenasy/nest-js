@@ -26,5 +26,5 @@ export class CreateSubjectDto {
   @IsString({ each: true })
   @IsArray()
   @IsNotEmpty()
-  specialties: string;
+  specialties: string[];
 }

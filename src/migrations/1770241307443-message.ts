@@ -8,7 +8,7 @@ export class Message1770241307443 implements MigrationInterface {
       `CREATE TABLE "attachment" ("id" SERIAL NOT NULL, "name" character varying NOT NULL, "originalName" character varying NOT NULL, "messageId" uuid, CONSTRAINT "PK_d2a80c3a8d467f08a750ac4b420" PRIMARY KEY ("id"))`,
     );
     await queryRunner.query(
-      `CREATE TABLE "message" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "title" character varying NOT NULL, "content" text NOT NULL, "isReaded" boolean NOT NULL DEFAULT false, "mpath" character varying DEFAULT '', "fromId" uuid NOT NULL, "toId" uuid NOT NULL, "parentId" uuid, CONSTRAINT "PK_ba01f0a3e0123651915008bc578" PRIMARY KEY ("id"))`,
+      `CREATE TABLE "message" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "title" character varying NOT NULL, "content" text NOT NULL, "isRead" boolean NOT NULL DEFAULT false, "mpath" character varying DEFAULT '', "fromId" uuid NOT NULL, "toId" uuid NOT NULL, "parentId" uuid, CONSTRAINT "PK_ba01f0a3e0123651915008bc578" PRIMARY KEY ("id"))`,
     );
     await queryRunner.query(
       `ALTER TABLE "attachment" ADD CONSTRAINT "FK_5f4a6c0677b1f2b417e95c717f8" FOREIGN KEY ("messageId") REFERENCES "message"("id") ON DELETE CASCADE ON UPDATE NO ACTION`,

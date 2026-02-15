@@ -132,6 +132,5 @@ export class UserController {
           photo: user.person.photo,
         }),
     );
-    // return UserListResponse(data);
   }
 }

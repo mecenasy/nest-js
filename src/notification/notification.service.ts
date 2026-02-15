@@ -6,10 +6,9 @@ export class NotificationService {
   constructor(private readonly messageService: MessageService) {}
 
   public async getNotification(userId: string): Promise<any> {
-    const unReadedMessage =
-      await this.messageService.getUnReadedMessage(userId);
+    const unReadMessage = await this.messageService.getUnReadMessage(userId);
     return {
-      unReadedMessage,
+      unReadMessage,
     };
   }
 }

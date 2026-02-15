@@ -102,7 +102,7 @@ export class MessageService {
       .select([
         'message.id',
         'message.title',
-        'message.isReaded',
+        'message.isRead',
         'message.createdAt',
         'parent.id',
       ])
@@ -111,7 +111,7 @@ export class MessageService {
           SELECT 1 FROM message c 
           WHERE c.mpath LIKE message.mpath || '%' 
           AND c."toId" = :userId 
-          AND c."isReaded" = false
+          AND c."isRead" = false
         ))`,
         'is_thread_read',
       )
@@ -133,24 +133,24 @@ export class MessageService {
     entities.forEach((entity, index) => {
       if (raw[index]) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        entity.isReaded = !!raw[index].is_thread_read;
+        entity.isRead = !!raw[index].is_thread_read;
       }
     });
 
     return [entities, count];
   }
 
-  public async getUnReadedMessage(userId: string): Promise<number> {
+  public async getUnReadMessage(userId: string): Promise<number> {
     const count = await this.messageRepository
       .createQueryBuilder('message')
       .where('message.toId = :userId', { userId })
-      .andWhere('message.isReaded = :isReaded', { isReaded: false })
+      .andWhere('message.isRead = :isRead', { isRead: false })
       .getCount();
 
     return count;
   }
 
-  public async setReadedMessage(
+  public async setReadMessage(
     userId: string,
     messageId: string,
   ): Promise<Message> {
@@ -163,7 +163,7 @@ export class MessageService {
       throw new NotFoundException('Message not found');
     }
 
-    message.isReaded = true;
+    message.isRead = true;
 
     return await this.messageRepository.save(message);
   }

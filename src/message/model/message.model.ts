@@ -11,5 +11,5 @@ export interface IMessage {
   parent?: IMessage;
   replies?: IMessage[];
   files?: IAttachment[];
-  isReaded: boolean;
+  isRead: boolean;
 }

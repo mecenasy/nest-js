@@ -71,5 +71,5 @@ export class GetMessageResponse {
 
   @Expose()
   @IsBoolean()
-  isReaded: boolean;
+  isRead: boolean;
 }
