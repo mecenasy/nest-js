@@ -30,7 +30,7 @@ import { GradeModule } from './grade/grade.module';
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         ...configService.get('db'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: true,
+        // synchronize: true,
       }),
     }),
 
