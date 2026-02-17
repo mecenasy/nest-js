@@ -28,7 +28,7 @@ export class AssetsInterceptor implements NestInterceptor {
       map((data) => {
         const appUrl = this.configService.get<AppConfig>('app')?.appUrl;
         const port = this.configService.get<AppConfig>('app')?.port;
-        const url = `${appUrl}:${port}`;
+        const url = port ? `${appUrl}:${port}` : appUrl;
 
         const processObject = (obj: Record<string, any>) => {
           const keys = Object.keys(obj);
