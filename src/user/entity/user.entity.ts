@@ -65,7 +65,7 @@ export class User implements IUser {
   })
   sendMessages: Message[];
 
-  @OneToMany(() => Message, (message) => message.from, {
+  @OneToMany(() => Message, (message) => message.to, {
     cascade: true,
     nullable: true,
   })

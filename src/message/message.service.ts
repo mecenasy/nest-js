@@ -88,8 +88,25 @@ export class MessageService {
       throw new NotFoundException('Message not found');
     }
 
-    const tree = await repo.findDescendantsTree(root, {
-      relations: ['from', 'to', 'files'],
+    const allChildren = await repo.findDescendants(rootNode, {
+      relations: ['from', 'from.person', 'to', 'to.person', 'files', 'parent'],
+    });
+
+    const map = new Map<string, Message>();
+    allChildren.forEach((child) => {
+      child.replies = [];
+      map.set(child.id, child);
+    });
+
+    let tree = {} as Message;
+    allChildren.forEach((child) => {
+      if (child.parent && map.has(child.parent.id)) {
+        map.get(child.parent.id)?.replies.push(child);
+      } else {
+        if (child.id === root.id) {
+          tree = child;
+        }
+      }
     });
 
     return tree;

@@ -86,18 +86,22 @@ export class MessageController {
 
   private convertMessage =
     (userId: string) =>
-    (message: Message): GetMessageResponse => {
-      return new GetMessageResponse({
+    (message: Message): GetMessageResponse =>
+      new GetMessageResponse({
         ...message,
-        from: message.from.id,
-        to: message.to.id,
+        from: {
+          id: message.from.id,
+          name: `${message.from.person.name} ${message.from.person.surname}`,
+        },
+        to: {
+          id: message.to.id,
+          name: `${message.to.person.name} ${message.to.person.surname}`,
+        },
         replies: message.replies?.map(this.convertMessage(userId)),
         files: message.files?.map((file) => ({
           path: file.name,
           name: file.originalName,
         })),
         isRead: userId === message.from.id ? true : message.isRead,
-        // isRead: message.isRead,
       });
-    };
 }
